@@ -96,7 +96,7 @@
 
 <h3 id="出租"><a href="#出租" class="headerlink" title="出租"></a><strong>出租</strong></h3><p><strong><a href="https://pintia.cn/problem-sets/994805046380707840/problems/994805107638517760">原题链接</a></strong></p>
 <p>下面是新浪微博上曾经很火的一张图：</p>
-<p><img src="https://images.ptausercontent.com/187" alt="img"></p>
+<p><img data-src="https://images.ptausercontent.com/187" alt="img"></p>
 <p>一时间网上一片求救声，急问这个怎么破。其实这段代码很简单，<code>index</code>数组就是<code>arr</code>数组的下标，<code>index[0]=2</code> 对应 <code>arr[2]=1</code>，<code>index[1]=0</code> 对应 <code>arr[0]=8</code>，<code>index[2]=3</code> 对应 <code>arr[3]=0</code>，以此类推…… 很容易得到电话号码是<code>18013820100</code>。</p>
 <p>本题要求你编写一个程序，为任何一个电话号码生成这段代码 —— 事实上，只要生成最前面两行就可以了，后面内容是不变的。</p>
 <h4 id="输入格式：-3"><a href="#输入格式：-3" class="headerlink" title="输入格式："></a>输入格式：</h4><p>输入在一行中给出一个由11位数字组成的手机号码。</p>
@@ -115,7 +115,7 @@
 
 <h3 id="列车调度"><a href="#列车调度" class="headerlink" title="列车调度"></a>列车调度</h3><p><strong><a href="https://pintia.cn/problem-sets/994805046380707840/problems/994805063166312448">原题链接</a></strong></p>
 <p>火车站的列车调度铁轨的结构如下图所示。</p>
-<p><img src="https://images.ptausercontent.com/188" alt="img"></p>
+<p><img data-src="https://images.ptausercontent.com/188" alt="img"></p>
 <p>两端分别是一条入口（Entrance）轨道和一条出口（Exit）轨道，它们之间有<code>N</code>条平行的轨道。每趟列车从入口可以选择任意一条轨道进入，最后从出口离开。在图中有9趟列车，在入口处按照{8，4，2，5，3，9，1，6，7}的顺序排队等待进入。如果要求它们必须按序号递减的顺序从出口离开，则至少需要多少条平行铁轨用于调度？</p>
 <h4 id="输入格式：-4"><a href="#输入格式：-4" class="headerlink" title="输入格式："></a>输入格式：</h4><p>输入第一行给出一个整数<code>N</code> (2 ≤ <code>N</code> ≤105)，下一行给出从1到<code>N</code>的整数序号的一个重排列。数字间以空格分隔。</p>
 <h4 id="输出格式：-4"><a href="#输出格式：-4" class="headerlink" title="输出格式："></a>输出格式：</h4><p>在一行中输出可以将输入的列车按序号递减的顺序调离所需要的最少的铁轨条数。</p>
@@ -124,9 +124,9 @@
 <h4 id="输出样例：-3"><a href="#输出样例：-3" class="headerlink" title="输出样例："></a>输出样例：</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">4</span><br></pre></td></tr></table></figure>
 
 <h4 id="个人解题思路-3"><a href="#个人解题思路-3" class="headerlink" title="个人解题思路:"></a>个人解题思路:</h4><p>可以用以下的动态图来得出最少的铁轨条数是4.</p>
-<p><img src="https://s3.bmp.ovh/imgs/2022/02/64f9038a4e405451.gif"></p>
+<p><img data-src="https://s3.bmp.ovh/imgs/2022/02/64f9038a4e405451.gif"></p>
 <p>要想列车按序号递减的顺序从出口离开，在平行铁轨上的列车必须是有序的，即铁轨上的列车序号必须是递减的。由于题目不需要记录所有的编号，只需要输出最小的铁轨数量，所以只需要记录最小的列车编号即可，而通过观察动图推导出，进入的列车序号只有比每一条铁轨最后的序号大才需要另一条铁轨，比如8，4，2进入一条铁轨，5比2大，只能进入第二条，由这样的规律可以推导出：</p>
-<p><img src="https://s3.bmp.ovh/imgs/2022/02/c34aa05a580675fd.gif"></p>
+<p><img data-src="https://s3.bmp.ovh/imgs/2022/02/c34aa05a580675fd.gif"></p>
 <p>请读者自行模拟其过程</p>
 <p>最后可以利用set的lower_bound函数来求解</p>
 <p>ac代码</p>
