@@ -111,9 +111,9 @@
 <h4 id="输出样例：-3"><a href="#输出样例：-3" class="headerlink" title="输出样例："></a>输出样例：</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">4</span><br></pre></td></tr></table></figure>
 
 <h4 id="个人解题思路-3"><a href="#个人解题思路-3" class="headerlink" title="个人解题思路:"></a>个人解题思路:</h4><p>可以用以下的动态图来得出最少的铁轨条数是4.</p>
-<p><img data-src="/images/%E5%A4%A9%E6%A2%AF%E8%AE%AD%E7%BB%83%E8%B5%9B(1.28~2.03)/64f9038a4e405451.gif"></p>
+<p><img data-src="/%E5%A4%A9%E6%A2%AF%E8%AE%AD%E7%BB%83%E8%B5%9B(1.28~2.03)/64f9038a4e405451.gif"></p>
 <p>要想列车按序号递减的顺序从出口离开，在平行铁轨上的列车必须是有序的，即铁轨上的列车序号必须是递减的。由于题目不需要记录所有的编号，只需要输出最小的铁轨数量，所以只需要记录最小的列车编号即可，而通过观察动图推导出，进入的列车序号只有比每一条铁轨最后的序号大才需要另一条铁轨，比如8，4，2进入一条铁轨，5比2大，只能进入第二条，由这样的规律可以推导出：</p>
-<p><img data-src="/images/%E5%A4%A9%E6%A2%AF%E8%AE%AD%E7%BB%83%E8%B5%9B(1.28~2.03)/c34aa05a580675fd.gif"></p>
+<p><img data-src="/%E5%A4%A9%E6%A2%AF%E8%AE%AD%E7%BB%83%E8%B5%9B(1.28~2.03)/c34aa05a580675fd.gif"></p>
 <p>请读者自行模拟其过程</p>
 <p>最后可以利用set的lower_bound函数来求解</p>
 <p>ac代码</p>
