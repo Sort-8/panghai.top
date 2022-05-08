@@ -129,4 +129,30 @@
         <tag>数据结构</tag>
       </tags>
   </entry>
+  <entry>
+    <title>添加ssh公钥</title>
+    <url>/2022/05/08/%E6%B7%BB%E5%8A%A0ssh%E5%85%AC%E9%92%A5/</url>
+    <content><![CDATA[<p>最近想要无密码登陆linux服务器，故记录步骤如下：</p>
+<p>1、在windows系统的cmd命令行上执行生成密钥对命令</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ssh-keygen</span><br></pre></td></tr></table></figure>
+
+<p>2、将生成的id_rsa.pub公钥内容复制到远程服务器上的&#x2F;.ssh&#x2F;authorized_keys(不存在则手动创建)</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">touch /.ssh/authorized_keys #文件不存在时手动创建</span><br><span class="line">vim /.ssh/authorized_keys #编辑authorized_keys文件</span><br></pre></td></tr></table></figure>
+
+<p>3、导入密钥，打开xshell-&gt;工具-&gt;用户密钥管理者-&gt;导入选项，导入刚刚生成的id_rsa密钥文件</p>
+<p>4、登录服务器，选择密钥登录并选择刚刚导入成功的密钥文件，即可完成无密码登录。</p>
+<p>5、（可选）取消密码登录，加强服务器安全性。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">vim /etc/ssh/sshd_config #编辑ssh配置文件</span><br><span class="line"><span class="meta">#</span><span class="language-bash">将PasswordAuthentication处的值改为no</span></span><br><span class="line">service sshd restart #重启ssh服务</span><br></pre></td></tr></table></figure>
+
+
+
+]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+        <tag>无密码登录</tag>
+      </tags>
+  </entry>
 </search>
