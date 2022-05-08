@@ -1,6 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Linux、Shell介绍</title>
+    <url>/2022/05/08/Linux%E3%80%81Shell%E4%BB%8B%E7%BB%8D/</url>
+    <content><![CDATA[<h4 id="Linux介绍"><a href="#Linux介绍" class="headerlink" title="Linux介绍"></a>Linux介绍</h4><p>说到服务器，那就要聊聊它的操作系统——Liunx了，Linux是一种自由和开放源码的类UNIX操作系统，它是在1991年由Linus Benedict Torvalds（林纳斯）在赫尔辛基大学上学时创立的。Linux是一个基于POXIS的多用户、多任务、支持多线程和多CPU的操作系统，具有性能高、安全等特性，常被运维人员用来当作服务器使用。</p>
+<p>它有一个基本思想：一切都是文件</p>
+<span id="more"></span>
+
+<h4 id="Linux基本操作"><a href="#Linux基本操作" class="headerlink" title="Linux基本操作"></a>Linux基本操作</h4><h5 id="ls"><a href="#ls" class="headerlink" title="ls"></a>ls</h5><p>展示当前目录下的文件</p>
+<h5 id="cd-path"><a href="#cd-path" class="headerlink" title="cd [path]"></a>cd [path]</h5><p>切换到指定目录，其中cd ..为上一级</p>
+<h5 id="touch-path-x2F-filename"><a href="#touch-path-x2F-filename" class="headerlink" title="touch [path&#x2F;filename]"></a>touch [path&#x2F;filename]</h5><p>创建文件</p>
+<h5 id="vi-x2F-vim-path-x2F-filename"><a href="#vi-x2F-vim-path-x2F-filename" class="headerlink" title="vi&#x2F;vim [path&#x2F;filename]"></a>vi&#x2F;vim [path&#x2F;filename]</h5><p>编辑文件，操作可以参考以下图片</p>
+<p><img data-src="https://ftp.bmp.ovh/imgs/2020/10/e0d5328c1ad10217.gif"></p>
+<h5 id="rm-path-x2F-filename"><a href="#rm-path-x2F-filename" class="headerlink" title="rm [path&#x2F;filename]"></a>rm [path&#x2F;filename]</h5><p>删除文件</p>
+<h5 id="yum-software"><a href="#yum-software" class="headerlink" title="yum [software]"></a>yum [software]</h5><p>安装软件包</p>
+<h4 id="Shell介绍"><a href="#Shell介绍" class="headerlink" title="Shell介绍"></a>Shell介绍</h4><p>shell是一个用C语言编写的程序，它是用户使用Linux的桥梁。shell既是一种命令语言，也是一种程序设计语言。</p>
+<h4 id="Shell脚本"><a href="#Shell脚本" class="headerlink" title="Shell脚本"></a>Shell脚本</h4><p>Shell脚本（shell script），是一种为Shell编写的脚本语言。</p>
+<h4 id="往期文章"><a href="#往期文章" class="headerlink" title="往期文章"></a>往期文章</h4><p><strong><a href="/2022/05/08/Linux%E3%80%81Shell%E4%BB%8B%E7%BB%8D/" title="Linux、Shell介绍">Linux、Shell介绍</a></strong></p>
+<p><strong><a href="/2022/05/08/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" title="开发环境配置">开发环境配置</a></strong></p>
+<h4 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h4><p><a href="https://www.runoob.com/linux/linux-tutorial.html">Linux教程</a></p>
+]]></content>
+      <categories>
+        <category>专栏</category>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>玩转服务器</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>天梯训练赛(1.28~2.03)</title>
     <url>/2022/02/20/%E5%A4%A9%E6%A2%AF%E8%AE%AD%E7%BB%83%E8%B5%9B(1.28~2.03)/</url>
     <content><![CDATA[<h3 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h3><p>getchar函数以及atio函数的用法、结构体数组的初始化、set容器的使用</p>
@@ -117,72 +145,6 @@
       </tags>
   </entry>
   <entry>
-    <title>添加ssh公钥</title>
-    <url>/2022/05/08/%E6%B7%BB%E5%8A%A0ssh%E5%85%AC%E9%92%A5/</url>
-    <content><![CDATA[<p>最近想要无密码登陆linux服务器，故记录步骤如下：</p>
-<p>1、在windows系统的cmd命令行上执行生成密钥对命令</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ssh-keygen</span><br></pre></td></tr></table></figure>
-
-<p>2、将生成的id_rsa.pub公钥内容复制到远程服务器上的&#x2F;.ssh&#x2F;authorized_keys(不存在则手动创建)</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">touch /.ssh/authorized_keys #文件不存在时手动创建</span><br><span class="line">vim /.ssh/authorized_keys #编辑authorized_keys文件</span><br></pre></td></tr></table></figure>
-
-<p>3、导入密钥，打开xshell-&gt;工具-&gt;用户密钥管理者-&gt;导入选项，导入刚刚生成的id_rsa密钥文件</p>
-<p>4、登录服务器，选择密钥登录并选择刚刚导入成功的密钥文件，即可完成无密码登录。</p>
-<p>5、（可选）取消密码登录，加强服务器安全性。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">vim /etc/ssh/sshd_config #编辑ssh配置文件</span><br><span class="line"><span class="meta">#</span><span class="language-bash">将PasswordAuthentication处的值改为no</span></span><br><span class="line">service sshd restart #重启ssh服务</span><br></pre></td></tr></table></figure>
-
-
-
-]]></content>
-      <categories>
-        <category>linux</category>
-      </categories>
-      <tags>
-        <tag>linux</tag>
-        <tag>无密码登录</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>玩转服务器</title>
-    <url>/2022/05/08/%E7%8E%A9%E8%BD%AC%E6%9C%8D%E5%8A%A1%E5%99%A8/</url>
-    <content><![CDATA[<p>出一个专栏：玩转服务器，主要讲解一个web应用程序是怎么部署到服务器并实现在线访问的。</p>
-<p>最近出一个专栏：玩转服务器</p>
-<p>主要讲解一个web应用程序是怎么部署到服务器并实现在线访问的。</p>
-<h5 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h5><h5 id=""><a href="#" class="headerlink" title=""></a><a href="/2022/05/08/Linux%E3%80%81Shell%E4%BB%8B%E7%BB%8D/" title="Linux、Shell介绍">Linux、Shell介绍</a></h5><h5 id="-1"><a href="#-1" class="headerlink" title=""></a><a href="/2022/05/08/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" title="开发环境配置">开发环境配置</a></h5>]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>玩转服务器</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Linux、Shell介绍</title>
-    <url>/2022/05/08/Linux%E3%80%81Shell%E4%BB%8B%E7%BB%8D/</url>
-    <content><![CDATA[<h4 id="Linux介绍"><a href="#Linux介绍" class="headerlink" title="Linux介绍"></a>Linux介绍</h4><p>说到服务器，那就要聊聊它的操作系统——Liunx了，Linux是一种自由和开放源码的类UNIX操作系统，它是在1991年由Linus Benedict Torvalds（林纳斯）在赫尔辛基大学上学时创立的。Linux是一个基于POXIS的多用户、多任务、支持多线程和多CPU的操作系统，具有性能高、安全等特性，常被运维人员用来当作服务器使用。</p>
-<p>它有一个基本思想：一切都是文件</p>
-<span id="more"></span>
-
-<h4 id="Linux基本操作"><a href="#Linux基本操作" class="headerlink" title="Linux基本操作"></a>Linux基本操作</h4><h5 id="ls"><a href="#ls" class="headerlink" title="ls"></a>ls</h5><p>展示当前目录下的文件</p>
-<h5 id="cd-path"><a href="#cd-path" class="headerlink" title="cd [path]"></a>cd [path]</h5><p>切换到指定目录，其中cd ..为上一级</p>
-<h5 id="touch-path-x2F-filename"><a href="#touch-path-x2F-filename" class="headerlink" title="touch [path&#x2F;filename]"></a>touch [path&#x2F;filename]</h5><p>创建文件</p>
-<h5 id="vi-x2F-vim-path-x2F-filename"><a href="#vi-x2F-vim-path-x2F-filename" class="headerlink" title="vi&#x2F;vim [path&#x2F;filename]"></a>vi&#x2F;vim [path&#x2F;filename]</h5><p>编辑文件，操作可以参考以下图片</p>
-<p><img data-src="https://ftp.bmp.ovh/imgs/2020/10/e0d5328c1ad10217.gif"></p>
-<h5 id="rm-path-x2F-filename"><a href="#rm-path-x2F-filename" class="headerlink" title="rm [path&#x2F;filename]"></a>rm [path&#x2F;filename]</h5><p>删除文件</p>
-<h5 id="yum-software"><a href="#yum-software" class="headerlink" title="yum [software]"></a>yum [software]</h5><p>安装软件包</p>
-<h4 id="Shell介绍"><a href="#Shell介绍" class="headerlink" title="Shell介绍"></a>Shell介绍</h4><p>shell是一个用C语言编写的程序，它是用户使用Linux的桥梁。shell既是一种命令语言，也是一种程序设计语言。</p>
-<h4 id="Shell脚本"><a href="#Shell脚本" class="headerlink" title="Shell脚本"></a>Shell脚本</h4><p>Shell脚本（shell script），是一种为Shell编写的脚本语言。</p>
-<h4 id="往期文章"><a href="#往期文章" class="headerlink" title="往期文章"></a>往期文章</h4><p><strong><a href="/2022/05/08/Linux%E3%80%81Shell%E4%BB%8B%E7%BB%8D/" title="Linux、Shell介绍">Linux、Shell介绍</a></strong></p>
-<p><strong><a href="/2022/05/08/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" title="开发环境配置">开发环境配置</a></strong></p>
-]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>玩转服务器</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>开发环境配置</title>
     <url>/2022/05/08/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</url>
     <content><![CDATA[<h4 id="基本开发环境安装脚本"><a href="#基本开发环境安装脚本" class="headerlink" title="基本开发环境安装脚本"></a>基本开发环境安装脚本</h4><h5 id="java"><a href="#java" class="headerlink" title="java"></a>java</h5><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="language-bash">!/bin/sh</span></span><br><span class="line">echo &quot;----------------------uninstall old java -----------------------&quot;</span><br><span class="line">rpm -qa | grep java | xargs rpm -e --nodeps</span><br><span class="line">rpm -qa | grep jdk | xargs rpm -e --nodeps</span><br><span class="line">rpm -qa | grep gcp | xargs rpm -e --nodeps</span><br><span class="line">sed -ie &#x27;/JAVA_HOME/d&#x27; /etc/profile</span><br><span class="line">echo &quot;finished&quot;</span><br><span class="line">echo &quot;---------------start yum install java-1.8.0-openjdk ----------------&quot;</span><br><span class="line">yum install java-1.8.0-openjdk* -y</span><br><span class="line"></span><br><span class="line">cat &gt;&gt; /etc/profile&lt;&lt;EOF</span><br><span class="line">export JAVA_HOME=/usr/lib/jvm/java</span><br><span class="line">export CLASSPATH=.:\$JAVA_HOME/lib/dt.jar:\$JAVA_HOME/lib/tools.jar:\$JAVA_HOME/jre/lib/rt.jar</span><br><span class="line">export PATH=\$PATH:\$JAVA_HOME/bin</span><br><span class="line">EOF</span><br><span class="line"></span><br><span class="line">source /etc/profile</span><br><span class="line"></span><br><span class="line">java -version</span><br><span class="line"></span><br><span class="line">echo &quot;---------yum install java-1.8.0-openjdk success -----------&quot;</span><br></pre></td></tr></table></figure>
@@ -201,6 +163,7 @@
 <p><strong><a href="/2022/05/08/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" title="开发环境配置">开发环境配置</a></strong></p>
 ]]></content>
       <categories>
+        <category>专栏</category>
         <category>Linux</category>
       </categories>
       <tags>
@@ -218,6 +181,47 @@
       <tags>
         <tag>算法训练</tag>
         <tag>数据结构</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>添加SSH公钥</title>
+    <url>/2022/05/08/%E6%B7%BB%E5%8A%A0SSH%E5%85%AC%E9%92%A5/</url>
+    <content><![CDATA[<p>最近想要无密码登陆linux服务器，故记录步骤如下：</p>
+<p>1、在windows系统的cmd命令行上执行生成密钥对命令</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ssh-keygen</span><br></pre></td></tr></table></figure>
+
+<p>2、将生成的id_rsa.pub公钥内容复制到远程服务器上的&#x2F;.ssh&#x2F;authorized_keys(不存在则手动创建)</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">touch /.ssh/authorized_keys #文件不存在时手动创建</span><br><span class="line">vim /.ssh/authorized_keys #编辑authorized_keys文件</span><br></pre></td></tr></table></figure>
+
+<p>3、导入密钥，打开xshell-&gt;工具-&gt;用户密钥管理者-&gt;导入选项，导入刚刚生成的id_rsa密钥文件</p>
+<p>4、登录服务器，选择密钥登录并选择刚刚导入成功的密钥文件，即可完成无密码登录。</p>
+<p>5、（可选）取消密码登录，加强服务器安全性。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">vim /etc/ssh/sshd_config #编辑ssh配置文件</span><br><span class="line"><span class="meta">#</span><span class="language-bash">将PasswordAuthentication处的值改为no</span></span><br><span class="line">service sshd restart #重启ssh服务</span><br></pre></td></tr></table></figure>
+
+
+
+]]></content>
+      <categories>
+        <category>专栏</category>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>无密码登录</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>玩转服务器</title>
+    <url>/2022/05/08/%E7%8E%A9%E8%BD%AC%E6%9C%8D%E5%8A%A1%E5%99%A8/</url>
+    <content><![CDATA[<p>(￣▽￣)～■□～(￣▽￣)</p>
+<p>记录如何部署Web程序到服务器</p>
+<h5 id="专栏目录"><a href="#专栏目录" class="headerlink" title="专栏目录"></a>专栏目录</h5><h5 id=""><a href="#" class="headerlink" title=""></a><a href="/2022/05/08/Linux%E3%80%81Shell%E4%BB%8B%E7%BB%8D/" title="Linux、Shell介绍">Linux、Shell介绍</a></h5><h5 id="-1"><a href="#-1" class="headerlink" title=""></a><a href="/2022/05/08/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" title="开发环境配置">开发环境配置</a></h5>]]></content>
+      <categories>
+        <category>专栏</category>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>玩转服务器</tag>
       </tags>
   </entry>
 </search>
