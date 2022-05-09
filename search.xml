@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>Linux、Shell介绍</title>
-    <url>/title/</url>
+    <url>/Linux%E3%80%81Shell%E4%BB%8B%E7%BB%8D/</url>
     <content><![CDATA[<h4 id="Linux介绍"><a href="#Linux介绍" class="headerlink" title="Linux介绍"></a>Linux介绍</h4><p>说到服务器，那就要聊聊它的操作系统——Liunx了，Linux是一种自由和开放源码的类UNIX操作系统，它是在1991年由Linus Benedict Torvalds（林纳斯）在赫尔辛基大学上学时创立的。Linux是一个基于POXIS的多用户、多任务、支持多线程和多CPU的操作系统，具有性能高、安全等特性，常被运维人员用来当作服务器使用。</p>
 <p>它有一个基本思想：一切都是文件</p>
 <span id="more"></span>
@@ -30,7 +30,7 @@
   </entry>
   <entry>
     <title>天梯训练赛(1.28~2.03)</title>
-    <url>/title/</url>
+    <url>/%E5%A4%A9%E6%A2%AF%E8%AE%AD%E7%BB%83%E8%B5%9B(1.28~2.03)/</url>
     <content><![CDATA[<h3 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h3><p>getchar函数以及atio函数的用法、结构体数组的初始化、set容器的使用</p>
 <span id="more"></span>
 
@@ -146,7 +146,7 @@
   </entry>
   <entry>
     <title>添加SSH公钥</title>
-    <url>/title/</url>
+    <url>/%E6%B7%BB%E5%8A%A0SSH%E5%85%AC%E9%92%A5/</url>
     <content><![CDATA[<p>最近想要无密码登陆linux服务器，故记录步骤如下：</p>
 <p>1、在windows系统的cmd命令行上执行生成密钥对命令</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ssh-keygen</span><br></pre></td></tr></table></figure>
@@ -173,7 +173,7 @@
   </entry>
   <entry>
     <title>开发环境配置</title>
-    <url>/title/</url>
+    <url>/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</url>
     <content><![CDATA[<h4 id="基本开发环境安装脚本"><a href="#基本开发环境安装脚本" class="headerlink" title="基本开发环境安装脚本"></a>基本开发环境安装脚本</h4><h5 id="java"><a href="#java" class="headerlink" title="java"></a>java</h5><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="language-bash">!/bin/sh</span></span><br><span class="line">echo &quot;----------------------uninstall old java -----------------------&quot;</span><br><span class="line">rpm -qa | grep java | xargs rpm -e --nodeps</span><br><span class="line">rpm -qa | grep jdk | xargs rpm -e --nodeps</span><br><span class="line">rpm -qa | grep gcp | xargs rpm -e --nodeps</span><br><span class="line">sed -ie &#x27;/JAVA_HOME/d&#x27; /etc/profile</span><br><span class="line">echo &quot;finished&quot;</span><br><span class="line">echo &quot;---------------start yum install java-1.8.0-openjdk ----------------&quot;</span><br><span class="line">yum install java-1.8.0-openjdk* -y</span><br><span class="line"></span><br><span class="line">cat &gt;&gt; /etc/profile&lt;&lt;EOF</span><br><span class="line">export JAVA_HOME=/usr/lib/jvm/java</span><br><span class="line">export CLASSPATH=.:\$JAVA_HOME/lib/dt.jar:\$JAVA_HOME/lib/tools.jar:\$JAVA_HOME/jre/lib/rt.jar</span><br><span class="line">export PATH=\$PATH:\$JAVA_HOME/bin</span><br><span class="line">EOF</span><br><span class="line"></span><br><span class="line">source /etc/profile</span><br><span class="line"></span><br><span class="line">java -version</span><br><span class="line"></span><br><span class="line">echo &quot;---------yum install java-1.8.0-openjdk success -----------&quot;</span><br></pre></td></tr></table></figure>
 
 <span id="more"></span>
@@ -199,7 +199,7 @@
   </entry>
   <entry>
     <title>玩转服务器</title>
-    <url>/title/</url>
+    <url>/%E7%8E%A9%E8%BD%AC%E6%9C%8D%E5%8A%A1%E5%99%A8/</url>
     <content><![CDATA[<p>(￣▽￣)～■□～(￣▽￣)</p>
 <p>记录如何部署Web程序到服务器</p>
 <h5 id="专栏目录"><a href="#专栏目录" class="headerlink" title="专栏目录"></a>专栏目录</h5><h5 id=""><a href="#" class="headerlink" title=""></a><a href="/2022/05/08/Linux%E3%80%81Shell%E4%BB%8B%E7%BB%8D/" title="Linux、Shell介绍">Linux、Shell介绍</a></h5><h5 id="-1"><a href="#-1" class="headerlink" title=""></a><a href="/2022/05/08/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" title="开发环境配置">开发环境配置</a></h5>]]></content>
@@ -213,7 +213,7 @@
   </entry>
   <entry>
     <title>玩转STL</title>
-    <url>/title/</url>
+    <url>/%E7%8E%A9%E8%BD%ACSTL/</url>
     <content><![CDATA[]]></content>
       <categories>
         <category>算法</category>
