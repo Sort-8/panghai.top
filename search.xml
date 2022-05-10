@@ -1,33 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>STL容器-set</title>
-    <url>/STL%E5%AE%B9%E5%99%A8-set/</url>
-    <content><![CDATA[<h2 id="set介绍"><a href="#set介绍" class="headerlink" title="set介绍"></a>set介绍</h2><p><strong><a href="http://c.biancheng.net/view/7192.html">参考链接</a></strong></p>
-<p>set是STL中的一种关联容器，它的底层是红黑树，也称为RB树(Red-Black Tree)，同样底层采用了红黑树的容器还有multiset, map, multimap。它是用来存储同一数据类型的数据类型，并且能从一个数据集合中取出数据，在set中每个元素的值都唯一，而且能根据元素的值自动进行排序(默认升序)。</p>
-<span id="more"></span>
-
-<h2 id="常用函数"><a href="#常用函数" class="headerlink" title="常用函数"></a>常用函数</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">set&lt;<span class="type">int</span>&gt;sc;<span class="comment">//定义</span></span><br><span class="line">sc.<span class="built_in">insert</span>(<span class="number">8</span>);</span><br><span class="line">sc.<span class="built_in">insert</span>(<span class="number">3</span>);</span><br><span class="line">sc.<span class="built_in">insert</span>(<span class="number">4</span>);</span><br><span class="line">sc.<span class="built_in">insert</span>(<span class="number">2</span>);</span><br><span class="line">sc.<span class="built_in">insert</span>(<span class="number">1</span>);<span class="comment">//插入指定元素</span></span><br><span class="line">sc.<span class="built_in">begin</span>();<span class="comment">//指向sc第一个元素的迭代器</span></span><br><span class="line">sc.<span class="built_in">end</span>();<span class="comment">//指向sc最后一个元素之后的迭代器</span></span><br><span class="line">sc.<span class="built_in">erase</span>(<span class="number">1</span>);<span class="comment">//删除指定元素，删除成功返回1，否则返回0</span></span><br><span class="line">sc.<span class="built_in">empty</span>();<span class="comment">//判断是否为空，为空返回1，否则返回0</span></span><br><span class="line">sc.<span class="built_in">find</span>(<span class="number">1</span>)<span class="comment">//查找1这个元素，找到返回此元素迭代器，没有找到返回myset.end()</span></span><br><span class="line">sc.<span class="built_in">size</span>();<span class="comment">//返回sc的元素个数</span></span><br><span class="line">sc.<span class="built_in">count</span>(<span class="number">1</span>)<span class="comment">//对1进行计数，存在返回1，不存在返回0</span></span><br><span class="line"><span class="comment">//set的遍历</span></span><br><span class="line"><span class="keyword">for</span>(set&lt;<span class="type">int</span>&gt;::iterator it=sc.<span class="built_in">begin</span>();it!=sc.<span class="built_in">end</span>();it++)</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,*it);</span><br><span class="line"></span><br><span class="line">sc.<span class="built_in">lower_bound</span>(<span class="number">1</span>)<span class="comment">//寻找第一个大于等于1的元素，返回此元素迭代器，未找到返回sc.end()</span></span><br><span class="line">sc.<span class="built_in">upper_bound</span>(<span class="number">1</span>)<span class="comment">//寻找第一个大于1的元素，返回此元素迭代器，未找到返回sc.end()</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;set&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	set&lt;<span class="type">int</span>&gt; sc;</span><br><span class="line">	sc.<span class="built_in">insert</span>(<span class="number">1</span>);</span><br><span class="line">	sc.<span class="built_in">insert</span>(<span class="number">8</span>);</span><br><span class="line">	sc.<span class="built_in">insert</span>(<span class="number">3</span>);</span><br><span class="line">	sc.<span class="built_in">insert</span>(<span class="number">4</span>);</span><br><span class="line">	sc.<span class="built_in">insert</span>(<span class="number">2</span>);</span><br><span class="line">	sc.<span class="built_in">erase</span>(<span class="number">3</span>);</span><br><span class="line">	<span class="keyword">for</span>(set&lt;<span class="type">int</span>&gt;::iterator it=sc.<span class="built_in">begin</span>();it!=sc.<span class="built_in">end</span>();it++)</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,*it);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">	sc.<span class="built_in">erase</span>(*sc.<span class="built_in">lower_bound</span>(<span class="number">4</span>));</span><br><span class="line">	<span class="keyword">for</span>(set&lt;<span class="type">int</span>&gt;::iterator it=sc.<span class="built_in">begin</span>();it!=sc.<span class="built_in">end</span>();it++)</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,*it);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">1248</span><br><span class="line">128</span><br></pre></td></tr></table></figure>
-
-<h2 id="练习题目"><a href="#练习题目" class="headerlink" title="练习题目"></a>练习题目</h2><p><strong><a href="https://pintia.cn/problem-sets/994805046380707840/problems/994805070149828608">集合相似度</a></strong></p>
-<p><strong><a href="https://pintia.cn/problem-sets/994805046380707840/problems/994805063166312448">列车调度</a></strong></p>
-<h2 id="往期文章"><a href="#往期文章" class="headerlink" title="往期文章"></a>往期文章</h2><p><strong><a href="/STL%E5%AE%B9%E5%99%A8-set/" title="STL容器-set">STL容器-set</a></strong></p>
-]]></content>
-      <categories>
-        <category>专栏</category>
-        <category>数据结构</category>
-        <category>STL</category>
-      </categories>
-      <tags>
-        <tag>STL</tag>
-        <tag>set</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Linux、Shell介绍</title>
     <url>/Linux%E3%80%81Shell%E4%BB%8B%E7%BB%8D/</url>
     <content><![CDATA[<h2 id="Linux介绍"><a href="#Linux介绍" class="headerlink" title="Linux介绍"></a>Linux介绍</h2><p>说到服务器，那就要聊聊它的操作系统——Liunx了，Linux是一种自由和开放源码的类UNIX操作系统，它是在1991年由Linus Benedict Torvalds（林纳斯）在赫尔辛基大学上学时创立的。Linux是一个基于POXIS的多用户、多任务、支持多线程和多CPU的操作系统，具有性能高、安全等特性，常被运维人员用来当作服务器使用。</p>
@@ -65,6 +38,33 @@
       </tags>
   </entry>
   <entry>
+    <title>STL容器-set</title>
+    <url>/STL%E5%AE%B9%E5%99%A8-set/</url>
+    <content><![CDATA[<h2 id="set介绍"><a href="#set介绍" class="headerlink" title="set介绍"></a>set介绍</h2><p><strong><a href="http://c.biancheng.net/view/7192.html">参考链接</a></strong></p>
+<p>set是STL中的一种关联容器，它的底层是红黑树，也称为RB树(Red-Black Tree)，同样底层采用了红黑树的容器还有multiset, map, multimap。它是用来存储同一数据类型的数据类型，并且能从一个数据集合中取出数据，在set中每个元素的值都唯一，而且能根据元素的值自动进行排序(默认升序)。</p>
+<span id="more"></span>
+
+<h2 id="常用函数"><a href="#常用函数" class="headerlink" title="常用函数"></a>常用函数</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">set&lt;<span class="type">int</span>&gt;sc;<span class="comment">//定义</span></span><br><span class="line">sc.<span class="built_in">insert</span>(<span class="number">8</span>);</span><br><span class="line">sc.<span class="built_in">insert</span>(<span class="number">3</span>);</span><br><span class="line">sc.<span class="built_in">insert</span>(<span class="number">4</span>);</span><br><span class="line">sc.<span class="built_in">insert</span>(<span class="number">2</span>);</span><br><span class="line">sc.<span class="built_in">insert</span>(<span class="number">1</span>);<span class="comment">//插入指定元素</span></span><br><span class="line">sc.<span class="built_in">begin</span>();<span class="comment">//指向sc第一个元素的迭代器</span></span><br><span class="line">sc.<span class="built_in">end</span>();<span class="comment">//指向sc最后一个元素之后的迭代器</span></span><br><span class="line">sc.<span class="built_in">erase</span>(<span class="number">1</span>);<span class="comment">//删除指定元素，删除成功返回1，否则返回0</span></span><br><span class="line">sc.<span class="built_in">empty</span>();<span class="comment">//判断是否为空，为空返回1，否则返回0</span></span><br><span class="line">sc.<span class="built_in">find</span>(<span class="number">1</span>)<span class="comment">//查找1这个元素，找到返回此元素迭代器，没有找到返回myset.end()</span></span><br><span class="line">sc.<span class="built_in">size</span>();<span class="comment">//返回sc的元素个数</span></span><br><span class="line">sc.<span class="built_in">count</span>(<span class="number">1</span>)<span class="comment">//对1进行计数，存在返回1，不存在返回0</span></span><br><span class="line"><span class="comment">//set的遍历</span></span><br><span class="line"><span class="keyword">for</span>(set&lt;<span class="type">int</span>&gt;::iterator it=sc.<span class="built_in">begin</span>();it!=sc.<span class="built_in">end</span>();it++)</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,*it);</span><br><span class="line"></span><br><span class="line">sc.<span class="built_in">lower_bound</span>(<span class="number">1</span>)<span class="comment">//寻找第一个大于等于1的元素，返回此元素迭代器，未找到返回sc.end()</span></span><br><span class="line">sc.<span class="built_in">upper_bound</span>(<span class="number">1</span>)<span class="comment">//寻找第一个大于1的元素，返回此元素迭代器，未找到返回sc.end()</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;set&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	set&lt;<span class="type">int</span>&gt; sc;</span><br><span class="line">	sc.<span class="built_in">insert</span>(<span class="number">1</span>);</span><br><span class="line">	sc.<span class="built_in">insert</span>(<span class="number">8</span>);</span><br><span class="line">	sc.<span class="built_in">insert</span>(<span class="number">3</span>);</span><br><span class="line">	sc.<span class="built_in">insert</span>(<span class="number">4</span>);</span><br><span class="line">	sc.<span class="built_in">insert</span>(<span class="number">2</span>);</span><br><span class="line">	sc.<span class="built_in">erase</span>(<span class="number">3</span>);</span><br><span class="line">	<span class="keyword">for</span>(set&lt;<span class="type">int</span>&gt;::iterator it=sc.<span class="built_in">begin</span>();it!=sc.<span class="built_in">end</span>();it++)</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,*it);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">	sc.<span class="built_in">erase</span>(*sc.<span class="built_in">lower_bound</span>(<span class="number">4</span>));</span><br><span class="line">	<span class="keyword">for</span>(set&lt;<span class="type">int</span>&gt;::iterator it=sc.<span class="built_in">begin</span>();it!=sc.<span class="built_in">end</span>();it++)</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,*it);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">1248</span><br><span class="line">128</span><br></pre></td></tr></table></figure>
+
+<h2 id="练习题目"><a href="#练习题目" class="headerlink" title="练习题目"></a>练习题目</h2><p><strong><a href="https://pintia.cn/problem-sets/994805046380707840/problems/994805070149828608">集合相似度</a></strong></p>
+<p><strong><a href="https://pintia.cn/problem-sets/994805046380707840/problems/994805063166312448">列车调度</a></strong></p>
+<h2 id="往期文章"><a href="#往期文章" class="headerlink" title="往期文章"></a>往期文章</h2><p><strong><a href="/STL%E5%AE%B9%E5%99%A8-set/" title="STL容器-set">STL容器-set</a></strong></p>
+]]></content>
+      <categories>
+        <category>专栏</category>
+        <category>数据结构</category>
+        <category>STL</category>
+      </categories>
+      <tags>
+        <tag>STL</tag>
+        <tag>set</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>开发环境配置</title>
     <url>/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</url>
     <content><![CDATA[<h2 id="基本开发环境安装脚本"><a href="#基本开发环境安装脚本" class="headerlink" title="基本开发环境安装脚本"></a>基本开发环境安装脚本</h2><h3 id="java"><a href="#java" class="headerlink" title="java"></a><strong>java</strong></h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="language-bash">!/bin/sh</span></span><br><span class="line">echo &quot;----------------------uninstall old java -----------------------&quot;</span><br><span class="line">rpm -qa | grep java | xargs rpm -e --nodeps</span><br><span class="line">rpm -qa | grep jdk | xargs rpm -e --nodeps</span><br><span class="line">rpm -qa | grep gcp | xargs rpm -e --nodeps</span><br><span class="line">sed -ie &#x27;/JAVA_HOME/d&#x27; /etc/profile</span><br><span class="line">echo &quot;finished&quot;</span><br><span class="line">echo &quot;---------------start yum install java-1.8.0-openjdk ----------------&quot;</span><br><span class="line">yum install java-1.8.0-openjdk* -y</span><br><span class="line"></span><br><span class="line">cat &gt;&gt; /etc/profile&lt;&lt;EOF</span><br><span class="line">export JAVA_HOME=/usr/lib/jvm/java</span><br><span class="line">export CLASSPATH=.:\$JAVA_HOME/lib/dt.jar:\$JAVA_HOME/lib/tools.jar:\$JAVA_HOME/jre/lib/rt.jar</span><br><span class="line">export PATH=\$PATH:\$JAVA_HOME/bin</span><br><span class="line">EOF</span><br><span class="line"></span><br><span class="line">source /etc/profile</span><br><span class="line"></span><br><span class="line">java -version</span><br><span class="line"></span><br><span class="line">echo &quot;---------yum install java-1.8.0-openjdk success -----------&quot;</span><br></pre></td></tr></table></figure>
@@ -86,6 +86,58 @@
 
 <h3 id="node（可选）"><a href="#node（可选）" class="headerlink" title="node（可选）"></a><strong>node（可选）</strong></h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">if type node &gt;/dev/null 2&gt;&amp;1; then</span><br><span class="line">  echo &#x27;node 已安装&#x27;</span><br><span class="line">else</span><br><span class="line">  echo &#x27;node 未安装&#x27;</span><br><span class="line">fi</span><br><span class="line">echo &quot;-----------start yum install node ---------------&quot;</span><br><span class="line">wget https://cdn.npm.taobao.org/dist/node/latest-v16.x/node-v16.10.0-linux-x64.tar.gz</span><br><span class="line">tar -xvf node-v16.10.0-linux-x64.tar.gz</span><br><span class="line">mv node-v16.10.0-linux-x64 /usr/local/node</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="language-bash">删除配置文件中原有的环境变量</span></span><br><span class="line">sed -ie &#x27;/NODE_HOME/d&#x27; /etc/profile</span><br><span class="line">sed -ie &#x27;/cnpm/d&#x27; /etc/profile</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="language-bash">修改maven的环境变量，直接写入配置文件</span></span><br><span class="line">echo &quot;export NODE_HOME=/usr/local/node&quot; &gt;&gt;/etc/profile</span><br><span class="line">echo &quot;export PATH=\$NODE_HOME/bin:\$PATH&quot; &gt;&gt;/etc/profile</span><br><span class="line"></span><br><span class="line">source /etc/profile</span><br><span class="line"></span><br><span class="line">npm install -g cnpm -registry=https://registry.npm.taobao.org</span><br><span class="line">echo &quot;export PATH=/usr/local/node/lib/node_moudles/cnpm/bin:$PATH&quot; &gt;&gt;/etc/profile</span><br><span class="line">source /etc/profile</span><br><span class="line">npm config set registry https://registry.npm.taobao.org</span><br><span class="line">npm install npm -g</span><br><span class="line">source /etc/profile</span><br><span class="line">node -v</span><br><span class="line">npm -v</span><br><span class="line">cnpm -v</span><br><span class="line">echo &quot;-------yum install node success ----------&quot;</span><br></pre></td></tr></table></figure>
 
+<h2 id="往期文章"><a href="#往期文章" class="headerlink" title="往期文章"></a>往期文章</h2><p><strong><a href="/Linux%E3%80%81Shell%E4%BB%8B%E7%BB%8D/" title="Linux、Shell介绍">Linux、Shell介绍</a></strong></p>
+<p><strong><a href="/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" title="开发环境配置">开发环境配置</a></strong></p>
+<p><strong><a href="/%E6%90%AD%E5%BB%BAWeb%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F/" title="搭建Web应用程序">搭建Web应用程序</a></strong></p>
+<p><strong><a href="/%E6%90%AD%E5%BB%BA%E9%9B%86%E6%88%90Mybatis%E7%9A%84Web%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F/" title="搭建集成Mybatis的Web应用程序">搭建集成Mybatis的Web应用程序</a></strong></p>
+]]></content>
+      <categories>
+        <category>专栏</category>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>玩转服务器</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>搭建Web应用程序</title>
+    <url>/%E6%90%AD%E5%BB%BAWeb%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F/</url>
+    <content><![CDATA[<p>环境搭建完后，开始搭建Web应用程序。</p>
+<h2 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h2><p>选择Spring lnitializr</p>
+<img data-src="/%E6%90%AD%E5%BB%BAWeb%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F/%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE.png" class="">
+
+<span id="more"></span>
+
+<p>选择SpringWeb，创建完成</p>
+<img data-src="/%E6%90%AD%E5%BB%BAWeb%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F/%E9%80%89%E6%8B%A9SpringWeb.png" class="">
+
+<h2 id="创建Controller"><a href="#创建Controller" class="headerlink" title="创建Controller"></a>创建Controller</h2><p>在com.example.demo包下创建HelloController</p>
+<p>其中@RestController注解表示返回字符串，一般用于接口</p>
+<p>而@Controller注解表示返回html页面，一般用于Html、Jquery</p>
+<p>@RequestMapping注解则表示路由，用来映射URL； 注解的value、method、params及headers分别指定“请求的URL、请求方法、请求参数及请求头”</p>
+<img data-src="/%E6%90%AD%E5%BB%BAWeb%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F/%E5%88%9B%E5%BB%BAContronller.png" class="">
+
+<h2 id="添加符合RESTful风格的接口"><a href="#添加符合RESTful风格的接口" class="headerlink" title="添加符合RESTful风格的接口"></a>添加符合RESTful风格的接口</h2><p>下面我们添加几个符合<a href="https://restfulapi.cn/">RESTful</a>风格的接口</p>
+<p>其中@PostMapping对应增</p>
+<p>其中@DeleteMapping对应删</p>
+<p>其中@PutMapping对应改</p>
+<p>其中@GetMapping对应查</p>
+<img data-src="/%E6%90%AD%E5%BB%BAWeb%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F/%E5%85%B7%E6%9C%89RESTful%E9%A3%8E%E6%A0%BC%E7%9A%84%E6%8E%A5%E5%8F%A3.png" class="">
+
+<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><p>用postman测试这4个方法</p>
+<img data-src="/%E6%90%AD%E5%BB%BAWeb%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F/%E6%B5%8B%E8%AF%95PostMapping.png" class="">
+
+<img data-src="/%E6%90%AD%E5%BB%BAWeb%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F/%E6%B5%8B%E8%AF%95DeleteMapping.png" class="">
+
+<img data-src="/%E6%90%AD%E5%BB%BAWeb%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F/%E6%B5%8B%E8%AF%95PutMapping.png" class="">
+
+<img data-src="/%E6%90%AD%E5%BB%BAWeb%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F/%E6%B5%8B%E8%AF%95GetMapping.png" class="">
+
+<h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><p>打包jar后上传到服务器，终端输入命令java -jar jar名称</p>
+<p>将jar包放入后台跑：</p>
+<img data-src="/%E6%90%AD%E5%BB%BAWeb%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%B7%91jar%E5%8C%85.png" class="" title="服务器跑jar包">
+
+<p>在postman上将localhost替换为服务器ip地址即可（需要<a href="https://developer.aliyun.com/article/767328">服务器开放端口</a>）</p>
 <h2 id="往期文章"><a href="#往期文章" class="headerlink" title="往期文章"></a>往期文章</h2><p><strong><a href="/Linux%E3%80%81Shell%E4%BB%8B%E7%BB%8D/" title="Linux、Shell介绍">Linux、Shell介绍</a></strong></p>
 <p><strong><a href="/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" title="开发环境配置">开发环境配置</a></strong></p>
 <p><strong><a href="/%E6%90%AD%E5%BB%BAWeb%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F/" title="搭建Web应用程序">搭建Web应用程序</a></strong></p>
@@ -216,58 +268,6 @@
       </tags>
   </entry>
   <entry>
-    <title>搭建Web应用程序</title>
-    <url>/%E6%90%AD%E5%BB%BAWeb%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F/</url>
-    <content><![CDATA[<p>环境搭建完后，开始搭建Web应用程序。</p>
-<h2 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h2><p>选择Spring lnitializr</p>
-<img data-src="/%E6%90%AD%E5%BB%BAWeb%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F/%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE.png" class="">
-
-<span id="more"></span>
-
-<p>选择SpringWeb，创建完成</p>
-<img data-src="/%E6%90%AD%E5%BB%BAWeb%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F/%E9%80%89%E6%8B%A9SpringWeb.png" class="">
-
-<h2 id="创建Controller"><a href="#创建Controller" class="headerlink" title="创建Controller"></a>创建Controller</h2><p>在com.example.demo包下创建HelloController</p>
-<p>其中@RestController注解表示返回字符串，一般用于接口</p>
-<p>而@Controller注解表示返回html页面，一般用于Html、Jquery</p>
-<p>@RequestMapping注解则表示路由，用来映射URL； 注解的value、method、params及headers分别指定“请求的URL、请求方法、请求参数及请求头”</p>
-<img data-src="/%E6%90%AD%E5%BB%BAWeb%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F/%E5%88%9B%E5%BB%BAContronller.png" class="">
-
-<h2 id="添加符合RESTful风格的接口"><a href="#添加符合RESTful风格的接口" class="headerlink" title="添加符合RESTful风格的接口"></a>添加符合RESTful风格的接口</h2><p>下面我们添加几个符合<a href="https://restfulapi.cn/">RESTful</a>风格的接口</p>
-<p>其中@PostMapping对应增</p>
-<p>其中@DeleteMapping对应删</p>
-<p>其中@PutMapping对应改</p>
-<p>其中@GetMapping对应查</p>
-<img data-src="/%E6%90%AD%E5%BB%BAWeb%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F/%E5%85%B7%E6%9C%89RESTful%E9%A3%8E%E6%A0%BC%E7%9A%84%E6%8E%A5%E5%8F%A3.png" class="">
-
-<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><p>用postman测试这4个方法</p>
-<img data-src="/%E6%90%AD%E5%BB%BAWeb%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F/%E6%B5%8B%E8%AF%95PostMapping.png" class="">
-
-<img data-src="/%E6%90%AD%E5%BB%BAWeb%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F/%E6%B5%8B%E8%AF%95DeleteMapping.png" class="">
-
-<img data-src="/%E6%90%AD%E5%BB%BAWeb%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F/%E6%B5%8B%E8%AF%95PutMapping.png" class="">
-
-<img data-src="/%E6%90%AD%E5%BB%BAWeb%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F/%E6%B5%8B%E8%AF%95GetMapping.png" class="">
-
-<h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><p>打包jar后上传到服务器，终端输入命令java -jar jar名称</p>
-<p>将jar包放入后台跑：</p>
-<img data-src="/%E6%90%AD%E5%BB%BAWeb%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%B7%91jar%E5%8C%85.png" class="" title="服务器跑jar包">
-
-<p>在postman上将localhost替换为服务器ip地址即可（需要<a href="https://developer.aliyun.com/article/767328">服务器开放端口</a>）</p>
-<h2 id="往期文章"><a href="#往期文章" class="headerlink" title="往期文章"></a>往期文章</h2><p><strong><a href="/Linux%E3%80%81Shell%E4%BB%8B%E7%BB%8D/" title="Linux、Shell介绍">Linux、Shell介绍</a></strong></p>
-<p><strong><a href="/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" title="开发环境配置">开发环境配置</a></strong></p>
-<p><strong><a href="/%E6%90%AD%E5%BB%BAWeb%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F/" title="搭建Web应用程序">搭建Web应用程序</a></strong></p>
-<p><strong><a href="/%E6%90%AD%E5%BB%BA%E9%9B%86%E6%88%90Mybatis%E7%9A%84Web%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F/" title="搭建集成Mybatis的Web应用程序">搭建集成Mybatis的Web应用程序</a></strong></p>
-]]></content>
-      <categories>
-        <category>专栏</category>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>玩转服务器</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>搭建集成Mybatis的Web应用程序</title>
     <url>/%E6%90%AD%E5%BB%BA%E9%9B%86%E6%88%90Mybatis%E7%9A%84Web%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F/</url>
     <content><![CDATA[<p>​        上期说到搭建一个SpringBoot程序，该程序创建的若干符合Restful风格的接口，同时返回一些字符串，但在实际情况中，返回的字符串是有查询数据库操作的，所以这期内容是搭建集成Mybatis的Web应用程序。</p>
@@ -328,7 +328,7 @@
 <p>业务Mapper类没有添加注解@Mapper</p>
 <h3 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h3><p><a href="http://c.biancheng.net/mybatis/mapper.html">MyBatis Mapper（映射器）</a></p>
 <p><a href="http://c.biancheng.net/mybatis/first-example.html">第一个MyBatis程序</a></p>
-<h2 id="往期文章"><a href="#往期文章" class="headerlink" title="往期文章"></a>往期文章</h2><p><strong><a href="/Linux%E3%80%81Shell%E4%BB%8B%E7%BB%8D/" title="Linux、Shell介绍">Linux、Shell介绍</a></strong></p>
+<h3 id="往期文章"><a href="#往期文章" class="headerlink" title="往期文章"></a>往期文章</h3><p><strong><a href="/Linux%E3%80%81Shell%E4%BB%8B%E7%BB%8D/" title="Linux、Shell介绍">Linux、Shell介绍</a></strong></p>
 <p><strong><a href="/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" title="开发环境配置">开发环境配置</a></strong></p>
 <p><strong><a href="/%E6%90%AD%E5%BB%BAWeb%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F/" title="搭建Web应用程序">搭建Web应用程序</a></strong></p>
 <p><strong><a href="/%E6%90%AD%E5%BB%BA%E9%9B%86%E6%88%90Mybatis%E7%9A%84Web%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F/" title="搭建集成Mybatis的Web应用程序">搭建集成Mybatis的Web应用程序</a></strong></p>
