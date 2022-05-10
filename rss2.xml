@@ -9,8 +9,23 @@
     <atom:link href="https://panghai.top/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>少年正当时，莫负好时光</description>
-    <pubDate>Mon, 09 May 2022 13:53:36 GMT</pubDate>
+    <pubDate>Tue, 10 May 2022 12:52:31 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>集成Mybaits的Web应用程序</title>
+      <link>https://panghai.top/%E9%9B%86%E6%88%90Mybaits%E7%9A%84Web%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F/</link>
+      <guid>https://panghai.top/%E9%9B%86%E6%88%90Mybaits%E7%9A%84Web%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F/</guid>
+      <pubDate>Tue, 10 May 2022 12:52:31 GMT</pubDate>
+      
+      
+      
+      
+      
+      
+      <comments>https://panghai.top/%E9%9B%86%E6%88%90Mybaits%E7%9A%84Web%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>搭建Web应用程序</title>
@@ -20,11 +35,12 @@
       
       <description>&lt;p&gt;环境搭建完后，开始搭建Web应用程序。&lt;/p&gt;
 &lt;h2 id=&quot;创建项目&quot;&gt;&lt;a href=&quot;#创建项目&quot; class=&quot;headerlink&quot; title=&quot;创建项目&quot;&gt;&lt;/a&gt;创建项目&lt;/h2&gt;&lt;p&gt;选择Spring lnitializr&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&quot;https://s3.bmp.ovh/imgs/2022/05/09/bb3290594b1702a3.png&quot;&gt;&lt;/p&gt;</description>
+&lt;p&gt;&lt;img data-src=&quot;https://s3.bmp.ovh/imgs/2022/05/09/bb3290594b1702a3.png&quot;&gt;&lt;/p&gt;
+&lt;img data-src=&quot;/%E6%90%AD%E5%BB%BAWeb%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F/%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE.png&quot; class=&quot;&quot;&gt;</description>
       
       
       
-      <content:encoded><![CDATA[<p>环境搭建完后，开始搭建Web应用程序。</p><h2 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h2><p>选择Spring lnitializr</p><p><img data-src="https://s3.bmp.ovh/imgs/2022/05/09/bb3290594b1702a3.png"></p><span id="more"></span><p>选择SpringWeb，创建完成</p><p><img data-src="https://i.bmp.ovh/imgs/2022/05/09/9b9890a53a59be36.png"></p><h2 id="创建Controller"><a href="#创建Controller" class="headerlink" title="创建Controller"></a>创建Controller</h2><p>在com.example.demo包下创建HelloController</p><p>其中@RestController注解表示返回字符串，一般用于接口</p><p>而@Controller注解表示返回html页面，一般用于Html、Jquery</p><p>@RequestMapping注解则表示路由，用来映射URL； 注解的value、method、params及headers分别指定“请求的URL、请求方法、请求参数及请求头”</p><p><img data-src="https://i.bmp.ovh/imgs/2022/05/09/b985ecacf5c6a0ac.png"></p><h2 id="添加符合RESTful风格的接口"><a href="#添加符合RESTful风格的接口" class="headerlink" title="添加符合RESTful风格的接口"></a>添加符合RESTful风格的接口</h2><p>下面我们添加几个符合<a href="https://restfulapi.cn/">RESTful</a>风格的接口</p><p>其中@PostMapping对应增</p><p>其中@DeleteMapping对应删</p><p>其中@PutMapping对应改</p><p>其中@GetMapping对应查</p><p><img data-src="https://i.bmp.ovh/imgs/2022/05/09/cb144b2b1deb4f08.png"></p><h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><p>用postman测试这4个方法</p><p><img data-src="https://i.bmp.ovh/imgs/2022/05/09/bf8bce96c8df680f.png"></p><p><img data-src="https://s3.bmp.ovh/imgs/2022/05/09/6aa97f82f0a54e81.png"></p><p><img data-src="https://i.bmp.ovh/imgs/2022/05/09/44203e43d4c146a5.png"></p><p><img data-src="https://i.bmp.ovh/imgs/2022/05/09/74469e02d10debb4.png"></p><h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><p>打包jar后上传到服务器，终端输入命令java -jar jar名称</p><p>在postman上将localhost替换为服务器ip地址即可（需要<a href="https://developer.aliyun.com/article/767328">服务器开放端口</a>）</p><h2 id="往期文章"><a href="#往期文章" class="headerlink" title="往期文章"></a>往期文章</h2><p><strong><a href="/Linux%E3%80%81Shell%E4%BB%8B%E7%BB%8D/" title="Linux、Shell介绍">Linux、Shell介绍</a></strong></p><p><strong><a href="/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" title="开发环境配置">开发环境配置</a></strong></p><p><strong><a href="/%E6%90%AD%E5%BB%BAWeb%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F/" title="搭建Web应用程序">搭建Web应用程序</a></strong></p>]]></content:encoded>
+      <content:encoded><![CDATA[<p>环境搭建完后，开始搭建Web应用程序。</p><h2 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h2><p>选择Spring lnitializr</p><p><img data-src="https://s3.bmp.ovh/imgs/2022/05/09/bb3290594b1702a3.png"></p><img data-src="/%E6%90%AD%E5%BB%BAWeb%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F/%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE.png" class=""><span id="more"></span><p>选择SpringWeb，创建完成</p><p><img data-src="https://i.bmp.ovh/imgs/2022/05/09/9b9890a53a59be36.png"></p><h2 id="创建Controller"><a href="#创建Controller" class="headerlink" title="创建Controller"></a>创建Controller</h2><p>在com.example.demo包下创建HelloController</p><p>其中@RestController注解表示返回字符串，一般用于接口</p><p>而@Controller注解表示返回html页面，一般用于Html、Jquery</p><p>@RequestMapping注解则表示路由，用来映射URL； 注解的value、method、params及headers分别指定“请求的URL、请求方法、请求参数及请求头”</p><p><img data-src="https://i.bmp.ovh/imgs/2022/05/09/b985ecacf5c6a0ac.png"></p><h2 id="添加符合RESTful风格的接口"><a href="#添加符合RESTful风格的接口" class="headerlink" title="添加符合RESTful风格的接口"></a>添加符合RESTful风格的接口</h2><p>下面我们添加几个符合<a href="https://restfulapi.cn/">RESTful</a>风格的接口</p><p>其中@PostMapping对应增</p><p>其中@DeleteMapping对应删</p><p>其中@PutMapping对应改</p><p>其中@GetMapping对应查</p><p><img data-src="https://i.bmp.ovh/imgs/2022/05/09/cb144b2b1deb4f08.png"></p><h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><p>用postman测试这4个方法</p><p><img data-src="https://i.bmp.ovh/imgs/2022/05/09/bf8bce96c8df680f.png"></p><p><img data-src="https://s3.bmp.ovh/imgs/2022/05/09/6aa97f82f0a54e81.png"></p><p><img data-src="https://i.bmp.ovh/imgs/2022/05/09/44203e43d4c146a5.png"></p><p><img data-src="https://i.bmp.ovh/imgs/2022/05/09/74469e02d10debb4.png"></p><h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><p>打包jar后上传到服务器，终端输入命令java -jar jar名称</p><p>在postman上将localhost替换为服务器ip地址即可（需要<a href="https://developer.aliyun.com/article/767328">服务器开放端口</a>）</p><h2 id="往期文章"><a href="#往期文章" class="headerlink" title="往期文章"></a>往期文章</h2><p><strong><a href="/Linux%E3%80%81Shell%E4%BB%8B%E7%BB%8D/" title="Linux、Shell介绍">Linux、Shell介绍</a></strong></p><p><strong><a href="/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" title="开发环境配置">开发环境配置</a></strong></p><p><strong><a href="/%E6%90%AD%E5%BB%BAWeb%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F/" title="搭建Web应用程序">搭建Web应用程序</a></strong></p>]]></content:encoded>
       
       
       <category domain="https://panghai.top/categories/%E4%B8%93%E6%A0%8F/">专栏</category>
