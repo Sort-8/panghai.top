@@ -716,8 +716,8 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
     });
     new Valine({
       el         : '#valine-comments',
-      verify     : false,
-      notify     : false,
+      verify     : true,
+      notify     : true,
       appId      : 'RSM2Pb48AxV0rGjP9T7lWJ62-gzGzoHsz',
       appKey     : 'irxWXy0pEWLtnHCDC6kHwPrI',
       placeholder: "欢迎留言，一起进步",
@@ -725,7 +725,7 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
       meta       : guest,
       pageSize   : '10' || 10,
       visitor    : true,
-      lang       : '' || 'zh-cn',
+      lang       : 'zh-cn' || 'zh-cn',
       path       : location.pathname,
       recordIP   : true,
       serverURLs : ''

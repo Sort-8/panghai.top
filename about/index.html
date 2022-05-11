@@ -28,16 +28,16 @@
     var CONFIG = {"hostname":"panghai.top","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="关于我 庞海，就读于广西民族大学人工智能学院，大三 主要方向为Java后端开发 在学校参与过数次Web应用开发，自学过SpringBoot、Mybatis等主流框架 喜欢和朋友打游戏、唱歌、打羽毛球  现在我 构建知识体系，完善自我 沉淀自己，反思过去，展望未来  联系我 QQ：19829989137 WeChat：ph13788395907 Email：1982989137@qq.com  关于">
+  <meta name="description" content="关于我 庞海，就读于广西民族大学人工智能学院，大三 主要方向为Java后端开发 在学校参与过数次Web应用开发，自学过SpringBoot、Mybatis等主流框架 喜欢和朋友打游戏、唱歌、打羽毛球  现在我 构建知识体系，完善自我 沉淀自己，反思过去，展望未来  联系我 QQ：19829989137 Email：1982989137@qq.com GitHub：https:&#x2F;&#x2F;github.co">
 <meta property="og:type" content="website">
 <meta property="og:title" content="关于">
 <meta property="og:url" content="https://panghai.top/about/index.html">
 <meta property="og:site_name" content="笔尖少年">
-<meta property="og:description" content="关于我 庞海，就读于广西民族大学人工智能学院，大三 主要方向为Java后端开发 在学校参与过数次Web应用开发，自学过SpringBoot、Mybatis等主流框架 喜欢和朋友打游戏、唱歌、打羽毛球  现在我 构建知识体系，完善自我 沉淀自己，反思过去，展望未来  联系我 QQ：19829989137 WeChat：ph13788395907 Email：1982989137@qq.com  关于">
+<meta property="og:description" content="关于我 庞海，就读于广西民族大学人工智能学院，大三 主要方向为Java后端开发 在学校参与过数次Web应用开发，自学过SpringBoot、Mybatis等主流框架 喜欢和朋友打游戏、唱歌、打羽毛球  现在我 构建知识体系，完善自我 沉淀自己，反思过去，展望未来  联系我 QQ：19829989137 Email：1982989137@qq.com GitHub：https:&#x2F;&#x2F;github.co">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://ghchart.rshah.org/Sort-8">
 <meta property="article:published_time" content="2022-02-19T05:27:09.000Z">
-<meta property="article:modified_time" content="2022-05-11T05:07:42.121Z">
+<meta property="article:modified_time" content="2022-05-11T10:32:03.966Z">
 <meta property="article:author" content="笔尖少年">
 <meta property="article:tag" content="博客 Linux 算法 服务器">
 <meta name="twitter:card" content="summary">
@@ -259,8 +259,8 @@
 </ul>
 <h4 id="联系我"><a href="#联系我" class="headerlink" title="联系我"></a>联系我</h4><ul>
 <li>QQ：<code>19829989137</code></li>
-<li>WeChat：<code>ph13788395907</code></li>
 <li>Email：<code>1982989137@qq.com</code></li>
+<li>GitHub：<a target="_blank" rel="noopener" href="https://github.com/Sort-8">https://github.com/Sort-8</a></li>
 </ul>
 <h4 id="关于本博客"><a href="#关于本博客" class="headerlink" title="关于本博客"></a>关于本博客</h4><ul>
 <li>使用<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/">hexo</a>博客框架搭建，这是一个快速、简洁且高效的博客框架</li>
@@ -552,8 +552,8 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
     });
     new Valine({
       el         : '#valine-comments',
-      verify     : false,
-      notify     : false,
+      verify     : true,
+      notify     : true,
       appId      : 'RSM2Pb48AxV0rGjP9T7lWJ62-gzGzoHsz',
       appKey     : 'irxWXy0pEWLtnHCDC6kHwPrI',
       placeholder: "欢迎留言，一起进步",
@@ -561,7 +561,7 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
       meta       : guest,
       pageSize   : '10' || 10,
       visitor    : true,
-      lang       : '' || 'zh-cn',
+      lang       : 'zh-cn' || 'zh-cn',
       path       : location.pathname,
       recordIP   : true,
       serverURLs : ''
