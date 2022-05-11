@@ -1,3 +1,4 @@
+https://panghai.top/about/index.html
 https://panghai.top/%E6%90%AD%E5%BB%BA%E9%9B%86%E6%88%90Mybatis%E7%9A%84Web%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F/
 https://panghai.top/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/
 https://panghai.top/%E6%90%AD%E5%BB%BAWeb%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F/
@@ -7,7 +8,6 @@ https://panghai.top/%E5%A4%A9%E6%A2%AF%E8%AE%AD%E7%BB%83%E8%B5%9B(1.28~2.03)/
 https://panghai.top/STL%E5%AE%B9%E5%99%A8-set/
 https://panghai.top/%E7%8E%A9%E8%BD%ACSTL/
 https://panghai.top/%E6%B7%BB%E5%8A%A0SSH%E5%85%AC%E9%92%A5/
-https://panghai.top/about/index.html
 https://panghai.top/schedule/index.html
 https://panghai.top/categories/index.html
 https://panghai.top/tags/index.html
