@@ -147,17 +147,17 @@
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">13</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">17</span></a>
 
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">18</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">21</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">14</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">17</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -224,6 +224,311 @@
 
           <div class="content index posts-expand">
             
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://panghai.top/Linux%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85Redis/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="笔尖少年">
+      <meta itemprop="description" content="少年正当时，莫负好时光">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="笔尖少年">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Linux%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85Redis/" class="post-title-link" itemprop="url">Linux一键安装Redis</a>
+        </h2>
+
+        <div class="post-meta">
+			
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-06-05 23:49:03 / 修改时间：23:50:09" itemprop="dateCreated datePublished" datetime="2022-06-05T23:49:03+08:00">2022-06-05</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%B8%93%E6%A0%8F/" itemprop="url" rel="index"><span itemprop="name">专栏</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%B8%93%E6%A0%8F/Redis/" itemprop="url" rel="index"><span itemprop="name">Redis</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%B8%93%E6%A0%8F/Redis/%E5%AE%89%E8%A3%85Redis%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/" itemprop="url" rel="index"><span itemprop="name">安装Redis开发环境</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/Linux%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85Redis/" class="post-meta-item leancloud_visitors" data-flag-title="Linux一键安装Redis" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/Linux%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85Redis/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/Linux%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85Redis/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>一键安装Redis脚本，一劳永逸</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="language-bash">!bin/sh</span></span><br><span class="line">cd ~</span><br><span class="line">FILE=/root/redis-5.0.8.tar.gz</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta"># </span><span class="language-bash">判断文件是否存在</span></span><br><span class="line">if test -f &quot;$FILE&quot;; then</span><br><span class="line">    echo &quot;$FILE exist&quot;</span><br><span class="line">	else</span><br><span class="line">		wget http://download.redis.io/releases/redis-5.0.8.tar.gz</span><br><span class="line">fi</span><br><span class="line"><span class="meta"># </span><span class="language-bash">解压安装包</span></span><br><span class="line">tar -zxvf redis-5.0.8.tar.gz</span><br><span class="line"><span class="meta"># </span><span class="language-bash">重命名</span></span><br><span class="line">mv redis-5.0.8 redis</span><br><span class="line"><span class="meta"># </span><span class="language-bash">移动文件</span></span><br><span class="line">mv -f redis /usr/local/redis</span><br><span class="line"></span><br><span class="line">cd /usr/local/redis</span><br><span class="line">mkdir data</span><br><span class="line"></span><br><span class="line">make MALLOC=lib</span><br><span class="line">make install</span><br><span class="line"></span><br><span class="line">cp /usr/local/redis/redis.conf /etc/redis/6354.conf</span><br><span class="line"></span><br><span class="line">cd /etc/init.d</span><br><span class="line">touch redis</span><br><span class="line">chmod 777 redis</span><br><span class="line">cat &lt;&lt; EOF &gt; redis</span><br><span class="line"></span><br><span class="line">REDISPORT=6354</span><br><span class="line">EXEC=/usr/local/redis/src/redis-server</span><br><span class="line">CLIEXEC=/usr/local/redis/src/redis-cli</span><br><span class="line">password=&quot;Admin123&quot;</span><br><span class="line"></span><br><span class="line">PIDFILE=/var/run/redis_$&#123;REDISPORT&#125;.pid</span><br><span class="line">CONF=&quot;/etc/redis/$&#123;REDISPORT&#125;.conf&quot;</span><br><span class="line"></span><br><span class="line">case &quot;$1&quot; in</span><br><span class="line">    start)</span><br><span class="line">        if [ -f $PIDFILE ]</span><br><span class="line">        then</span><br><span class="line">                echo &quot;$PIDFILE exists, process is already running or crashed&quot;</span><br><span class="line">        else</span><br><span class="line">                echo &quot;Starting Redis server...&quot;</span><br><span class="line">                $EXEC $CONF</span><br><span class="line">        fi</span><br><span class="line">        ;;</span><br><span class="line">    stop)</span><br><span class="line">        if [ ! -f $PIDFILE ]</span><br><span class="line">        then</span><br><span class="line">                echo &quot;$PIDFILE does not exist, process is not running&quot;</span><br><span class="line">        else</span><br><span class="line">                PID=$(cat $PIDFILE)</span><br><span class="line">                echo &quot;Stopping ...&quot;</span><br><span class="line">                $CLIEXEC -a $password  -p $REDISPORT shutdown</span><br><span class="line">                while [ -x /proc/$&#123;PID&#125; ]</span><br><span class="line">                do</span><br><span class="line">                    echo &quot;Waiting for Redis to shutdown ...&quot;</span><br><span class="line">                    sleep 1</span><br><span class="line">                done</span><br><span class="line">                echo &quot;Redis stopped&quot;</span><br><span class="line">        fi</span><br><span class="line">        ;;</span><br><span class="line">    *)</span><br><span class="line">        echo &quot;Please use start or stop as first argument&quot;</span><br><span class="line">        ;;</span><br><span class="line">esac</span><br><span class="line">EOF</span><br><span class="line"></span><br><span class="line">chkconfig --add redis</span><br><span class="line">chkconfig --list redis</span><br><span class="line"></span><br><span class="line">service redis start</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://panghai.top/Linux%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85MySQL/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="笔尖少年">
+      <meta itemprop="description" content="少年正当时，莫负好时光">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="笔尖少年">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Linux%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85MySQL/" class="post-title-link" itemprop="url">Linux一键安装MySQL</a>
+        </h2>
+
+        <div class="post-meta">
+			
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-06-05 23:38:38 / 修改时间：23:48:41" itemprop="dateCreated datePublished" datetime="2022-06-05T23:38:38+08:00">2022-06-05</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%B8%93%E6%A0%8F/" itemprop="url" rel="index"><span itemprop="name">专栏</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%B8%93%E6%A0%8F/MySQL/" itemprop="url" rel="index"><span itemprop="name">MySQL</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%B8%93%E6%A0%8F/MySQL/%E5%AE%89%E8%A3%85MySQL%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/" itemprop="url" rel="index"><span itemprop="name">安装MySQL开发环境</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/Linux%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85MySQL/" class="post-meta-item leancloud_visitors" data-flag-title="Linux一键安装MySQL" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/Linux%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85MySQL/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/Linux%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85MySQL/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>一键安装MySQL5.7脚本，一劳永逸</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="language-bash">!/bin/sh</span></span><br><span class="line"><span class="meta"># </span><span class="language-bash">提示：本脚本只支持centos 7 安装MySQL版本5.7</span></span><br><span class="line"><span class="meta"># </span><span class="language-bash">安装完成后脚本会打印出MySQL的root用户的初始登录密码</span></span><br><span class="line"><span class="meta"># </span><span class="language-bash">mysql -u root -p</span></span><br><span class="line"><span class="meta"># </span><span class="language-bash">输入初始密码即可登录</span></span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="language-bash">wget https://mirrors.tuna.tsinghua.edu.cn/mysql/downloads/MySQL-5.7/mysql-5.7.36-el7-x86_64.tar.gz</span></span><br><span class="line">REMOVE=`rpm -qa | grep -i mariadb-libs`</span><br><span class="line"><span class="meta">#</span><span class="language-bash">卸载系统预置的mariadb</span></span><br><span class="line">yum remove $REMOVE -y</span><br><span class="line"><span class="meta">#</span><span class="language-bash">安装依赖库</span></span><br><span class="line">yum install libaio -y</span><br><span class="line">yum install libncurses* -y</span><br><span class="line">yum install wget -y</span><br><span class="line"><span class="meta">#</span><span class="language-bash">下载</span></span><br><span class="line">wget https://mirrors.tuna.tsinghua.edu.cn/mysql/downloads/MySQL-5.7/mysql-5.7.36-el7-x86_64.tar.gz</span><br><span class="line">tar -zxvf mysql-5.7.36-el7-x86_64.tar.gz</span><br><span class="line">mv mysql-5.7.36-el7-x86_64 mysql</span><br><span class="line">mv mysql /usr/local/</span><br><span class="line">useradd -s/sbin/nlogin -M mysql</span><br><span class="line">id mysql</span><br><span class="line">mkdir /usr/local/mysql/&#123;data,log&#125;</span><br><span class="line">chown -R mysql.mysql /usr/local/mysql/</span><br><span class="line"><span class="meta">#</span><span class="language-bash">编辑my.cnf</span></span><br><span class="line">cat &lt;&lt; EOF &gt; /etc/my.cnf</span><br><span class="line">[client]</span><br><span class="line">port = 3306</span><br><span class="line">socket = /tmp/mysql.sock</span><br><span class="line"> </span><br><span class="line">[mysqld]</span><br><span class="line">server_id=10</span><br><span class="line">port = 3306</span><br><span class="line">user = mysql</span><br><span class="line">character-set-server = utf8mb4</span><br><span class="line">default_storage_engine = innodb</span><br><span class="line">log_timestamps = SYSTEM</span><br><span class="line">socket = /tmp/mysql.sock</span><br><span class="line">basedir = /usr/local/mysql</span><br><span class="line">datadir = /usr/local/mysql/data/</span><br><span class="line">pid-file = /usr/local/mysql/data/mysql.pid</span><br><span class="line">max_connections = 1000</span><br><span class="line">max_connect_errors = 1000</span><br><span class="line">table_open_cache = 1024</span><br><span class="line">max_allowed_packet = 128M</span><br><span class="line">open_files_limit = 65535</span><br><span class="line">log-bin=mysql-bin</span><br><span class="line"><span class="meta">#</span><span class="language-bash"><span class="comment">####====================================[innodb]==============================</span></span></span><br><span class="line">innodb_buffer_pool_size = 1024M</span><br><span class="line">innodb_file_per_table = 1</span><br><span class="line">innodb_write_io_threads = 4</span><br><span class="line">innodb_read_io_threads = 4</span><br><span class="line">innodb_purge_threads = 2</span><br><span class="line">innodb_flush_log_at_trx_commit = 1</span><br><span class="line">innodb_log_file_size = 512M</span><br><span class="line">innodb_log_files_in_group = 2</span><br><span class="line">innodb_log_buffer_size = 16M</span><br><span class="line">innodb_max_dirty_pages_pct = 80</span><br><span class="line">innodb_lock_wait_timeout = 30</span><br><span class="line">innodb_data_file_path=ibdata1:1024M:autoextend</span><br><span class="line"><span class="meta"> </span></span><br><span class="line"><span class="meta">#</span><span class="language-bash"><span class="comment">####====================================[log]==============================</span></span></span><br><span class="line">log_error = /usr/local/mysql/log/mysql-error.log </span><br><span class="line">slow_query_log = 1</span><br><span class="line">long_query_time = 1 </span><br><span class="line">slow_query_log_file = /usr/local/mysql/log/mysql-slow.log</span><br><span class="line"> </span><br><span class="line">sql_mode=NO_ENGINE_SUBSTITUTION,STRICT_TRANS_TABLES</span><br><span class="line">EOF</span><br><span class="line"><span class="meta"> </span></span><br><span class="line"><span class="meta">#</span><span class="language-bash">编译</span></span><br><span class="line">/usr/local/mysql/bin/mysqld --initialize --user=mysql --basedir=/usr/local/mysql --datadir=/usr/local/mysql/data --innodb_undo_tablespaces=3 --explicit_defaults_for_timestamp</span><br><span class="line"><span class="meta">#</span><span class="language-bash">授权</span></span><br><span class="line">chown -R mysql:mysql /usr/local/mysql</span><br><span class="line">cp /usr/local/mysql/support-files/mysql.server /etc/init.d/mysql</span><br><span class="line">chmod +x /etc/init.d/mysql</span><br><span class="line">chkconfig --add mysqld</span><br><span class="line">chkconfig --list</span><br><span class="line">cp /usr/local/mysql/bin/* /usr/local/sbin/</span><br><span class="line">cd /lib/systemd/system</span><br><span class="line"><span class="meta">#</span><span class="language-bash"><span class="comment"># 启动服务并查看</span></span></span><br><span class="line">/etc/init.d/mysql start</span><br><span class="line">netstat -lntup|grep mysql</span><br><span class="line">grep &quot;password&quot; /usr/local/mysql/log/mysql-error.log </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>MySQL8.0脚本</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="language-bash">!/bin/sh</span></span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta"># </span><span class="language-bash">使用</span></span><br><span class="line"><span class="meta"># </span><span class="language-bash">去到https://mirrors.tuna.tsinghua.edu.cn/mysql/downloads</span></span><br><span class="line"><span class="meta"># </span><span class="language-bash">选中合适的mysql版本并修改脚本中的链接</span></span><br><span class="line"></span><br><span class="line">export PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin</span><br><span class="line"></span><br><span class="line">Install_MySQL() &#123;</span><br><span class="line"><span class="meta">	# </span><span class="language-bash">CentOS 8 mysql: error <span class="keyword">while</span> loading shared libraries: libncurses.so.5</span></span><br><span class="line">	yum install ncurses ncurses-compat-libs -y</span><br><span class="line"><span class="meta">	# </span><span class="language-bash">Install dependencies</span></span><br><span class="line">	setenforce 0</span><br><span class="line">	yum -y install epel-release</span><br><span class="line">	yum -y install wget tar jemalloc jemalloc-devel gcc gcc-c++</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">	# </span><span class="language-bash">MySQL configuration</span></span><br><span class="line"><span class="meta">	# </span><span class="language-bash">此处应当进行适当修改</span></span><br><span class="line">	mysql_version=&quot;8.0.26&quot;</span><br><span class="line">	mysql_password=&quot;123456&quot;</span><br><span class="line">	mkdir -p /apps/server/mysql/data</span><br><span class="line">	mysql_install_dir=&quot;/usr/local/mysql&quot;</span><br><span class="line">	mysql_data_dir=&quot;/usr/local/mysql/data&quot;</span><br><span class="line">	download_mysql=&quot;https://mirrors.tuna.tsinghua.edu.cn/mysql/downloads&quot;</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">	# </span><span class="language-bash">Download MySQL</span></span><br><span class="line">	cd /mnt</span><br><span class="line">	useradd -M -s /sbin/nologin mysql &gt;/dev/null 2&gt;&amp;1</span><br><span class="line">	wget -c $&#123;download_mysql&#125;/MySQL-8.0/mysql-$&#123;mysql_version&#125;-linux-glibc2.12-x86_64.tar.xz --no-check-certificate</span><br><span class="line">    echo &quot;========== Start installing MySQL ============&quot;</span><br><span class="line">	tar xJf mysql-$&#123;mysql_version&#125;-linux-glibc2.12-x86_64.tar.xz</span><br><span class="line">	mkdir $&#123;mysql_install_dir&#125;</span><br><span class="line">	mv mysql-$&#123;mysql_version&#125;-linux-glibc2.12-x86_64/* $&#123;mysql_install_dir&#125;/</span><br><span class="line">	</span><br><span class="line">	if [[ -d &quot;$&#123;mysql_install_dir&#125;/support-files&quot; ]]; then</span><br><span class="line">		rm -rf mysql-$&#123;mysql_version&#125;-linux-glibc2.12-x86_64</span><br><span class="line">	else</span><br><span class="line">		rm -rf $&#123;mysql_install_dir&#125;</span><br><span class="line">		echo &quot;Error: MySQL install failed, Please contact the author&quot;</span><br><span class="line">		kill -9 $$</span><br><span class="line">	fi</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">	# </span><span class="language-bash">Initialize the database</span></span><br><span class="line"><span class="meta">	$</span><span class="language-bash">&#123;mysql_install_dir&#125;/bin/mysqld --initialize-insecure --user=mysql --basedir=<span class="variable">$&#123;mysql_install_dir&#125;</span> --datadir=<span class="variable">$&#123;mysql_data_dir&#125;</span></span></span><br><span class="line">	chown -R root . $&#123;mysql_install_dir&#125;</span><br><span class="line">	chown -R mysql.mysql $&#123;mysql_data_dir&#125;</span><br><span class="line">	cp -f $&#123;mysql_install_dir&#125;/support-files/mysql.server /etc/init.d/mysqld</span><br><span class="line">	sed -i &quot;s@^basedir=.*@basedir=$&#123;mysql_install_dir&#125;@&quot; /etc/init.d/mysqld</span><br><span class="line">	sed -i &quot;s@^datadir=.*@datadir=$&#123;mysql_data_dir&#125;@&quot; /etc/init.d/mysqld</span><br><span class="line">	sed -i &quot;s@/usr/local/mysql@$&#123;mysql_install_dir&#125;@g&quot; $&#123;mysql_install_dir&#125;/bin/mysqld_safe</span><br><span class="line">	sed -i &#x27;s@executing mysqld_safe@executing mysqld_safe\nexport LD_PRELOAD=/usr/lib64/libjemalloc.so@&#x27; $&#123;mysql_install_dir&#125;/bin/mysqld_safe</span><br><span class="line"><span class="meta">	#</span><span class="language-bash">删除配置文件中原有的环境变量</span></span><br><span class="line">	sed -ie &#x27;/MYSQL_HOME/d&#x27; /etc/profile</span><br><span class="line"><span class="meta">	#</span><span class="language-bash">修改mysql的环境变量，直接写入配置文件</span></span><br><span class="line">	echo &quot;export MYSQL_HOME=$&#123;mysql_install_dir&#125;&quot; &gt;&gt;/etc/profile</span><br><span class="line">	echo &quot;export PATH=\$PATH:\$MYSQL_HOME/bin&quot; &gt;&gt;/etc/profile</span><br><span class="line">	source /etc/profile</span><br><span class="line"><span class="meta">	# </span><span class="language-bash">my.conf configuration</span></span><br><span class="line">	cat &gt; /etc/my.cnf &lt;&lt; EOF</span><br><span class="line">[client]</span><br><span class="line">port = 3306</span><br><span class="line">socket = /tmp/mysql.sock</span><br><span class="line">default-character-set = utf8mb4</span><br><span class="line"></span><br><span class="line">[mysql]</span><br><span class="line">prompt=&quot;MySQL [\\d]&gt; &quot;</span><br><span class="line">no-auto-rehash</span><br><span class="line"></span><br><span class="line">[mysqld]</span><br><span class="line">port = 3306</span><br><span class="line">socket = /tmp/mysql.sock</span><br><span class="line">default_authentication_plugin = mysql_native_password</span><br><span class="line"></span><br><span class="line">basedir = $&#123;mysql_install_dir&#125;</span><br><span class="line">datadir = $&#123;mysql_data_dir&#125;</span><br><span class="line">pid-file = $&#123;mysql_data_dir&#125;/mysql.pid</span><br><span class="line">user = mysql</span><br><span class="line">bind-address = 0.0.0.0</span><br><span class="line">server-id = 1</span><br><span class="line"></span><br><span class="line">init-connect = &#x27;SET NAMES utf8mb4&#x27;</span><br><span class="line">character-set-server = utf8mb4</span><br><span class="line">collation-server = utf8mb4_0900_ai_ci</span><br><span class="line"></span><br><span class="line">skip-name-resolve</span><br><span class="line"><span class="meta">#</span><span class="language-bash">skip-networking</span></span><br><span class="line">back_log = 300</span><br><span class="line"></span><br><span class="line">max_connections = 1000</span><br><span class="line">max_connect_errors = 6000</span><br><span class="line">open_files_limit = 65535</span><br><span class="line">table_open_cache = 128</span><br><span class="line">max_allowed_packet = 500M</span><br><span class="line">binlog_cache_size = 1M</span><br><span class="line">max_heap_table_size = 8M</span><br><span class="line">tmp_table_size = 16M</span><br><span class="line"></span><br><span class="line">read_buffer_size = 2M</span><br><span class="line">read_rnd_buffer_size = 8M</span><br><span class="line">sort_buffer_size = 8M</span><br><span class="line">join_buffer_size = 8M</span><br><span class="line">key_buffer_size = 4M</span><br><span class="line"></span><br><span class="line">thread_cache_size = 8</span><br><span class="line"></span><br><span class="line">ft_min_word_len = 4</span><br><span class="line"></span><br><span class="line">log_bin = mysql-bin</span><br><span class="line">binlog_format = mixed</span><br><span class="line">binlog_expire_logs_seconds = 604800</span><br><span class="line"></span><br><span class="line">log_error = $&#123;mysql_data_dir&#125;/mysql-error.log</span><br><span class="line">slow_query_log = 1</span><br><span class="line">long_query_time = 1</span><br><span class="line">slow_query_log_file = $&#123;mysql_data_dir&#125;/mysql-slow.log</span><br><span class="line"></span><br><span class="line">performance_schema = 0</span><br><span class="line">explicit_defaults_for_timestamp</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="language-bash">lower_case_table_names = 1</span></span><br><span class="line"></span><br><span class="line">skip-external-locking</span><br><span class="line"></span><br><span class="line">default_storage_engine = InnoDB</span><br><span class="line"><span class="meta">#</span><span class="language-bash">default-storage-engine = MyISAM</span></span><br><span class="line">innodb_file_per_table = 1</span><br><span class="line">innodb_open_files = 500</span><br><span class="line">innodb_buffer_pool_size = 64M</span><br><span class="line">innodb_write_io_threads = 4</span><br><span class="line">innodb_read_io_threads = 4</span><br><span class="line">innodb_thread_concurrency = 0</span><br><span class="line">innodb_purge_threads = 1</span><br><span class="line">innodb_flush_log_at_trx_commit = 2</span><br><span class="line">innodb_log_buffer_size = 2M</span><br><span class="line">innodb_log_file_size = 32M</span><br><span class="line">innodb_log_files_in_group = 3</span><br><span class="line">innodb_max_dirty_pages_pct = 90</span><br><span class="line">innodb_lock_wait_timeout = 120</span><br><span class="line"></span><br><span class="line">bulk_insert_buffer_size = 8M</span><br><span class="line">myisam_sort_buffer_size = 8M</span><br><span class="line">myisam_max_sort_file_size = 10G</span><br><span class="line">myisam_repair_threads = 1</span><br><span class="line"></span><br><span class="line">interactive_timeout = 28800</span><br><span class="line">wait_timeout = 28800</span><br><span class="line"></span><br><span class="line">[mysqldump]</span><br><span class="line">quick</span><br><span class="line">max_allowed_packet = 500M</span><br><span class="line"></span><br><span class="line">[myisamchk]</span><br><span class="line">key_buffer_size = 8M</span><br><span class="line">sort_buffer_size = 8M</span><br><span class="line">read_buffer = 4M</span><br><span class="line">write_buffer = 4M</span><br><span class="line">EOF</span><br><span class="line"><span class="meta">	# </span><span class="language-bash">Set up MySQL</span></span><br><span class="line">	chmod 600 /etc/my.cnf</span><br><span class="line">	chmod +x /etc/init.d/mysqld</span><br><span class="line">	cp /etc/init.d/mysqld /usr/bin</span><br><span class="line">	systemctl enable mysqld</span><br><span class="line">  	systemctl start mysqld</span><br><span class="line"><span class="meta">  	$</span><span class="language-bash">&#123;mysql_install_dir&#125;/bin/mysql -uroot -hlocalhost -e <span class="string">&quot;create user root@&#x27;127.0.0.1&#x27; identified by \&quot;<span class="variable">$&#123;mysql_password&#125;</span>\&quot;;&quot;</span></span></span><br><span class="line"><span class="meta">  	$</span><span class="language-bash">&#123;mysql_install_dir&#125;/bin/mysql -uroot -hlocalhost -e <span class="string">&quot;grant all privileges on *.* to root@&#x27;127.0.0.1&#x27; with grant option;&quot;</span></span></span><br><span class="line"><span class="meta"> 	$</span><span class="language-bash">&#123;mysql_install_dir&#125;/bin/mysql -uroot -hlocalhost -e <span class="string">&quot;grant all privileges on *.* to root@&#x27;localhost&#x27; with grant option;&quot;</span></span></span><br><span class="line"><span class="meta">  	$</span><span class="language-bash">&#123;mysql_install_dir&#125;/bin/mysql -uroot -hlocalhost -e <span class="string">&quot;alter user root@&#x27;localhost&#x27; identified by \&quot;<span class="variable">$&#123;mysql_password&#125;</span>\&quot;;&quot;</span></span></span><br><span class="line"><span class="meta">  	$</span><span class="language-bash">&#123;mysql_install_dir&#125;/bin/mysql -uroot -p<span class="variable">$&#123;mysql_password&#125;</span> -e <span class="string">&quot;reset master;&quot;</span></span></span><br><span class="line">  	rm -rf /etc/ld.so.conf.d/&#123;mysql,mariadb,percona,alisql&#125;*.conf</span><br><span class="line">  	echo &quot;$&#123;mysql_install_dir&#125;/lib&quot; &gt; /etc/ld.so.conf.d/mysql_renwole.com.conf</span><br><span class="line">  	ldconfig</span><br><span class="line">  	echo &quot;========== MySQL installing Successfully =====&quot;</span><br><span class="line">	echo &quot;MySQL:&quot;</span><br><span class="line">	echo &quot;account: root&quot;</span><br><span class="line">	echo &quot;password: $&#123;mysql_password&#125;&quot;</span><br><span class="line">	echo &quot;database: $&#123;mysql_data_dir&#125;&quot;</span><br><span class="line">	echo &quot;==============================================&quot;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Install_MySQL</span><br><span class="line">source /etc/profile</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://panghai.top/Linux%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85Java/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="笔尖少年">
+      <meta itemprop="description" content="少年正当时，莫负好时光">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="笔尖少年">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Linux%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85Java/" class="post-title-link" itemprop="url">Linux一键安装Java</a>
+        </h2>
+
+        <div class="post-meta">
+			
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-06-05 23:33:19 / 修改时间：23:41:28" itemprop="dateCreated datePublished" datetime="2022-06-05T23:33:19+08:00">2022-06-05</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%B8%93%E6%A0%8F/" itemprop="url" rel="index"><span itemprop="name">专栏</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%B8%93%E6%A0%8F/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%B8%93%E6%A0%8F/Linux/%E5%AE%89%E8%A3%85Java%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/" itemprop="url" rel="index"><span itemprop="name">安装Java开发环境</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/Linux%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85Java/" class="post-meta-item leancloud_visitors" data-flag-title="Linux一键安装Java" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/Linux%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85Java/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/Linux%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85Java/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>一键安装Java脚本，一劳永逸</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="language-bash">!/bin/sh</span></span><br><span class="line">echo &quot;---------------uninstall old java ------------------&quot;</span><br><span class="line"><span class="meta">#</span><span class="language-bash">卸载旧版本的java</span></span><br><span class="line">rpm -qa | grep java | xargs rpm -e --nodeps</span><br><span class="line">rpm -qa | grep jdk | xargs rpm -e --nodeps</span><br><span class="line">rpm -qa | grep gcp | xargs rpm -e --nodeps</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="language-bash">删除旧版本的JAVA_HOME</span></span><br><span class="line">sed -ie &#x27;/JAVA_HOME/d&#x27; /etc/profile</span><br><span class="line">echo &quot;finished&quot;</span><br><span class="line">echo &quot;------------------start yum install java-1.8.0-openjdk --------------&quot;</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="language-bash">yum安装Java</span></span><br><span class="line">yum install java-1.8.0-openjdk* -y</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="language-bash">在/etc/profile追加JAVA_HOME</span></span><br><span class="line">cat &gt;&gt; /etc/profile&lt;&lt;EOF</span><br><span class="line">export JAVA_HOME=/usr/lib/jvm/java</span><br><span class="line">export CLASSPATH=.:\$JAVA_HOME/lib/dt.jar:\$JAVA_HOME/lib/tools.jar:\$JAVA_HOME/jre/lib/rt.jar</span><br><span class="line">export PATH=\$PATH:\$JAVA_HOME/bin</span><br><span class="line">EOF</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="language-bash">刷新JAVA_HOME</span></span><br><span class="line">source /etc/profile</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="language-bash">检测是否安装成功</span></span><br><span class="line">java -version</span><br><span class="line"></span><br><span class="line">echo &quot;----------------yum install java-1.8.0-openjdk success ---------------------&quot;</span><br></pre></td></tr></table></figure>
+
+
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
       
   
   
@@ -996,328 +1301,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://panghai.top/STL%E5%AE%B9%E5%99%A8-set/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="笔尖少年">
-      <meta itemprop="description" content="少年正当时，莫负好时光">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="笔尖少年">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/STL%E5%AE%B9%E5%99%A8-set/" class="post-title-link" itemprop="url">STL容器-set</a>
-        </h2>
-
-        <div class="post-meta">
-			
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2022-05-09 12:48:44 / 修改时间：18:31:17" itemprop="dateCreated datePublished" datetime="2022-05-09T12:48:44+08:00">2022-05-09</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E4%B8%93%E6%A0%8F/" itemprop="url" rel="index"><span itemprop="name">专栏</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E4%B8%93%E6%A0%8F/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" itemprop="url" rel="index"><span itemprop="name">数据结构</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E4%B8%93%E6%A0%8F/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/STL/" itemprop="url" rel="index"><span itemprop="name">STL</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/STL%E5%AE%B9%E5%99%A8-set/" class="post-meta-item leancloud_visitors" data-flag-title="STL容器-set" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/STL%E5%AE%B9%E5%99%A8-set/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/STL%E5%AE%B9%E5%99%A8-set/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="set介绍"><a href="#set介绍" class="headerlink" title="set介绍"></a>set介绍</h2><p><strong><a target="_blank" rel="noopener" href="http://c.biancheng.net/view/7192.html">参考链接</a></strong></p>
-<p>set是STL中的一种关联容器，它的底层是红黑树，也称为RB树(Red-Black Tree)，同样底层采用了红黑树的容器还有multiset, map, multimap。它是用来存储同一数据类型的数据类型，并且能从一个数据集合中取出数据，在set中每个元素的值都唯一，而且能根据元素的值自动进行排序(默认升序)。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/STL%E5%AE%B9%E5%99%A8-set/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://panghai.top/%E7%8E%A9%E8%BD%AC%E6%9C%8D%E5%8A%A1%E5%99%A8/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="笔尖少年">
-      <meta itemprop="description" content="少年正当时，莫负好时光">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="笔尖少年">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/%E7%8E%A9%E8%BD%AC%E6%9C%8D%E5%8A%A1%E5%99%A8/" class="post-title-link" itemprop="url">玩转服务器</a>
-        </h2>
-
-        <div class="post-meta">
-			
-                <i class="fa fa-thumb-tack"></i>
-				<font color=7D26CD>置顶</font>
-				<span class="post-meta-divider">|</span>
-			
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2022-05-08 21:10:27" itemprop="dateCreated datePublished" datetime="2022-05-08T21:10:27+08:00">2022-05-08</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-05-10 23:38:26" itemprop="dateModified" datetime="2022-05-10T23:38:26+08:00">2022-05-10</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E4%B8%93%E6%A0%8F/" itemprop="url" rel="index"><span itemprop="name">专栏</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E4%B8%93%E6%A0%8F/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/%E7%8E%A9%E8%BD%AC%E6%9C%8D%E5%8A%A1%E5%99%A8/" class="post-meta-item leancloud_visitors" data-flag-title="玩转服务器" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/%E7%8E%A9%E8%BD%AC%E6%9C%8D%E5%8A%A1%E5%99%A8/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/%E7%8E%A9%E8%BD%AC%E6%9C%8D%E5%8A%A1%E5%99%A8/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>(￣▽￣)～■□～(￣▽￣)</p>
-<p>记录如何部署Web程序到服务器</p>
-<h2 id="专栏目录"><a href="#专栏目录" class="headerlink" title="专栏目录"></a>专栏目录</h2><p><strong><a href="/Linux%E3%80%81Shell%E4%BB%8B%E7%BB%8D/" title="Linux、Shell介绍">Linux、Shell介绍</a></strong></p>
-<p><strong><a href="/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" title="开发环境配置">开发环境配置</a></strong></p>
-<p><strong><a href="/%E6%90%AD%E5%BB%BAWeb%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F/" title="搭建Web应用程序">搭建Web应用程序</a></strong></p>
-<p><strong><a href="/%E6%90%AD%E5%BB%BA%E9%9B%86%E6%88%90Mybatis%E7%9A%84Web%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F/" title="搭建集成Mybatis的Web应用程序">搭建集成Mybatis的Web应用程序</a></strong></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://panghai.top/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="笔尖少年">
-      <meta itemprop="description" content="少年正当时，莫负好时光">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="笔尖少年">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" class="post-title-link" itemprop="url">开发环境配置</a>
-        </h2>
-
-        <div class="post-meta">
-			
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2022-05-08 20:55:46" itemprop="dateCreated datePublished" datetime="2022-05-08T20:55:46+08:00">2022-05-08</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-05-30 23:42:09" itemprop="dateModified" datetime="2022-05-30T23:42:09+08:00">2022-05-30</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E4%B8%93%E6%A0%8F/" itemprop="url" rel="index"><span itemprop="name">专栏</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E4%B8%93%E6%A0%8F/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" class="post-meta-item leancloud_visitors" data-flag-title="开发环境配置" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="基本开发环境安装脚本"><a href="#基本开发环境安装脚本" class="headerlink" title="基本开发环境安装脚本"></a>基本开发环境安装脚本</h2><h3 id="java"><a href="#java" class="headerlink" title="java"></a><strong>java</strong></h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="language-bash">!/bin/sh</span></span><br><span class="line">echo &quot;----------------------uninstall old java -----------------------&quot;</span><br><span class="line">rpm -qa | grep java | xargs rpm -e --nodeps</span><br><span class="line">rpm -qa | grep jdk | xargs rpm -e --nodeps</span><br><span class="line">rpm -qa | grep gcp | xargs rpm -e --nodeps</span><br><span class="line">sed -ie &#x27;/JAVA_HOME/d&#x27; /etc/profile</span><br><span class="line">echo &quot;finished&quot;</span><br><span class="line">echo &quot;---------------start yum install java-1.8.0-openjdk ----------------&quot;</span><br><span class="line">yum install java-1.8.0-openjdk* -y</span><br><span class="line"></span><br><span class="line">cat &gt;&gt; /etc/profile&lt;&lt;EOF</span><br><span class="line">export JAVA_HOME=/usr/lib/jvm/java</span><br><span class="line">export CLASSPATH=.:\$JAVA_HOME/lib/dt.jar:\$JAVA_HOME/lib/tools.jar:\$JAVA_HOME/jre/lib/rt.jar</span><br><span class="line">export PATH=\$PATH:\$JAVA_HOME/bin</span><br><span class="line">EOF</span><br><span class="line"></span><br><span class="line">source /etc/profile</span><br><span class="line"></span><br><span class="line">java -version</span><br><span class="line"></span><br><span class="line">echo &quot;---------yum install java-1.8.0-openjdk success -----------&quot;</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1389,20 +1372,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">14</span>
+          <span class="site-state-item-count">17</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-count">17</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">18</span>
+        <span class="site-state-item-count">21</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
