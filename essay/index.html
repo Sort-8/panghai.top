@@ -35,11 +35,16 @@
 <meta property="og:site_name" content="笔尖少年">
 <meta property="og:description" content="记录一些常用小技巧hexo hexo新建文章  1hexo new xxxx   hexo部署一条龙  1hexo clean &amp;&amp; hexo g &amp;&amp; hexo d   hexo本地运行  1hexo s  markdown 添加代码块  1​&#96;&#96;&#96;+编程语言  java 查看java版本  1java -version   运行jar包  1java -jar">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://bing.img.run/uhd.php">
+<meta property="og:image" content="https://q.qlogo.cn/g?b=qq&nk=1982989137&s=100">
+<meta property="og:image" content="https://api.multiavatar.com/randomword.png">
+<meta property="og:image" content="https://ui-avatars.com/api/?name=John+Doe">
 <meta property="article:published_time" content="2022-05-31T07:09:32.000Z">
-<meta property="article:modified_time" content="2022-06-05T16:21:15.940Z">
+<meta property="article:modified_time" content="2022-06-15T15:59:36.487Z">
 <meta property="article:author" content="笔尖少年">
 <meta property="article:tag" content="博客 Linux 算法 服务器">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://bing.img.run/uhd.php">
 
 <link rel="canonical" href="https://panghai.top/essay/">
 
@@ -335,6 +340,88 @@
 <td>8500Kbps</td>
 </tr>
 </tbody></table>
+<h4 id="记录一些接口"><a href="#记录一些接口" class="headerlink" title="记录一些接口"></a>记录一些接口</h4><h5 id="必应每日-API-接口"><a href="#必应每日-API-接口" class="headerlink" title="必应每日 API 接口"></a>必应每日 API 接口</h5><p><a target="_blank" rel="noopener" href="https://cn.bing.com/HPImageArchive.aspx?n=1&amp;format=js&amp;idx=0">https://cn.bing.com/HPImageArchive.aspx?n=1&amp;format=js&amp;idx=0</a></p>
+<p>壁纸 API 参数：</p>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>必选</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>n</td>
+<td>是</td>
+<td>Number</td>
+<td>控制API返回多少组图片数据，至少需要1组数据，最多返回8组数据</td>
+</tr>
+<tr>
+<td>format</td>
+<td>否</td>
+<td>String</td>
+<td>返回数据的格式，默认：xml 格式，可支持json格式，参数：js</td>
+</tr>
+<tr>
+<td>idx</td>
+<td>否</td>
+<td>Number</td>
+<td>回朔7天之内的信息，默认：0，代表今天</td>
+</tr>
+</tbody></table>
+<p>今日壁纸：</p>
+<p><img data-src="https://bing.img.run/uhd.php"></p>
+<script>
+    var ajaxObj = new XMLHttpRequest();
+    ajaxObj.open('get', 'https://cn.bing.com/HPImageArchive.aspx?n=1&format=js&idx=0');
+    ajaxObj.send();
+    ajaxObj.onreadystatechange = function () {
+            // 为了保证 数据 完整返回，我们一般会判断 两个值
+            if (ajaxObj.readyState == 4 && ajaxObj.status == 200) {
+                // 如果能够进到这个判断 说明 数据 完美的回来了,并且请求的页面是存在的
+                // 5.在注册的事件中 获取 返回的 内容 并修改页面的显示
+                console.log('数据返回成功');
+                // 数据是保存在 异步对象的 属性中
+                console.log(ajaxObj.responseText);
+            }
+        }
+</script>
+
+<h5 id="头像接口"><a href="#头像接口" class="headerlink" title="头像接口"></a>头像接口</h5><p>QQ头像接口</p>
+<p><a target="_blank" rel="noopener" href="https://q.qlogo.cn/g?b=qq&amp;nk=1982989137&amp;s=100">https://q.qlogo.cn/g?b=qq&amp;nk=1982989137&amp;s=100</a></p>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>必选</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>nk</td>
+<td>是</td>
+<td>Number</td>
+<td>QQ号码</td>
+</tr>
+<tr>
+<td>s</td>
+<td>是</td>
+<td>Number</td>
+<td>头像大小，目前只找到100和640两个值</td>
+</tr>
+</tbody></table>
+<p>示例：</p>
+<p><img data-src="https://q.qlogo.cn/g?b=qq&nk=1982989137&s=100"></p>
+<p>由随机文字生成头像接口：</p>
+<p><a target="_blank" rel="noopener" href="https://api.multiavatar.com/randomword.png">https://api.multiavatar.com/randomword.png</a></p>
+<p>示例：</p>
+<p><img data-src="https://api.multiavatar.com/randomword.png"></p>
+<p>文字图片接口：</p>
+<p><a target="_blank" rel="noopener" href="https://ui-avatars.com/api/?name=John+Doe">https://ui-avatars.com/api/?name=John+Doe</a></p>
+<p>示例：</p>
+<p><img data-src="https://ui-avatars.com/api/?name=John+Doe"></p>
 
       </div>
 	  
@@ -397,7 +484,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AE%B0%E5%BD%95%E4%B8%80%E4%BA%9B%E5%B8%B8%E7%94%A8%E5%B0%8F%E6%8A%80%E5%B7%A7"><span class="nav-number">1.</span> <span class="nav-text">记录一些常用小技巧</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#hexo"><span class="nav-number">1.1.</span> <span class="nav-text">hexo</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#markdown"><span class="nav-number">1.2.</span> <span class="nav-text">markdown</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#java"><span class="nav-number">1.3.</span> <span class="nav-text">java</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#linux"><span class="nav-number">1.4.</span> <span class="nav-text">linux</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#ffmpeg"><span class="nav-number">1.5.</span> <span class="nav-text">ffmpeg</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AE%B0%E5%BD%95%E4%B8%80%E4%BA%9B%E5%B8%B8%E7%94%A8%E5%B0%8F%E6%8A%80%E5%B7%A7"><span class="nav-number">1.</span> <span class="nav-text">记录一些常用小技巧</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#hexo"><span class="nav-number">1.1.</span> <span class="nav-text">hexo</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#markdown"><span class="nav-number">1.2.</span> <span class="nav-text">markdown</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#java"><span class="nav-number">1.3.</span> <span class="nav-text">java</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#linux"><span class="nav-number">1.4.</span> <span class="nav-text">linux</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#ffmpeg"><span class="nav-number">1.5.</span> <span class="nav-text">ffmpeg</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AE%B0%E5%BD%95%E4%B8%80%E4%BA%9B%E6%8E%A5%E5%8F%A3"><span class="nav-number">2.</span> <span class="nav-text">记录一些接口</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%BF%85%E5%BA%94%E6%AF%8F%E6%97%A5-API-%E6%8E%A5%E5%8F%A3"><span class="nav-number">2.1.</span> <span class="nav-text">必应每日 API 接口</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%A4%B4%E5%83%8F%E6%8E%A5%E5%8F%A3"><span class="nav-number">2.2.</span> <span class="nav-text">头像接口</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
