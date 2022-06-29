@@ -40,7 +40,7 @@
 <meta property="og:image" content="https://api.multiavatar.com/randomword.png">
 <meta property="og:image" content="https://ui-avatars.com/api/?name=John+Doe">
 <meta property="article:published_time" content="2022-05-31T07:09:32.000Z">
-<meta property="article:modified_time" content="2022-06-18T13:23:53.337Z">
+<meta property="article:modified_time" content="2022-06-29T13:23:41.188Z">
 <meta property="article:author" content="笔尖少年">
 <meta property="article:tag" content="博客 Linux 算法 服务器">
 <meta name="twitter:card" content="summary">
@@ -295,13 +295,54 @@
 </ul>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ps -ef | grep java</span><br><span class="line">kill -9 xxx</span><br></pre></td></tr></table></figure>
 
+<h5 id="sed添加文件内容"><a href="#sed添加文件内容" class="headerlink" title="sed添加文件内容"></a>sed添加文件内容</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sed -i &#x27;N;106a\ddddddd&#x27; file</span><br></pre></td></tr></table></figure>
+
+<p>1、<code>-i</code>：原地编辑文件</p>
+<p>2、<code>N</code>：将下一行添加到pattern space中。将当前读入行和用N命令添加的下一行看成“一行”。</p>
+<p>2、<code>a</code>：追加文件内容。</p>
+<h5 id="sed修改文件内容"><a href="#sed修改文件内容" class="headerlink" title="sed修改文件内容"></a>sed修改文件内容</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sed -i &#x27;s/待替换的内容/替换后的内容/g&#x27; file</span><br></pre></td></tr></table></figure>
+
+<p>1、<code>-i</code>：原地编辑文件</p>
+<p>2、<code>/g</code>：全局修改，没有只修改第一处</p>
+<p>测试</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">spring:</span></span><br><span class="line">  <span class="attr">datasource:</span></span><br><span class="line">    <span class="attr">username:</span> <span class="string">admin</span></span><br><span class="line">    <span class="attr">password:</span> <span class="string">xxxxx</span></span><br><span class="line">    <span class="attr">url:</span> <span class="string">jdbc:mysql://localhost:3306/database</span></span><br></pre></td></tr></table></figure>
+
+<p>使用命令</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sed -i &#x27;s/xxxxx/123456/g&#x27; file</span><br><span class="line">sed -i &#x27;s/localhost/127.0.0.1/g&#x27; file</span><br></pre></td></tr></table></figure>
+
+<p>结果</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">spring:</span></span><br><span class="line">  <span class="attr">datasource:</span></span><br><span class="line">    <span class="attr">username:</span> <span class="string">admin</span></span><br><span class="line">    <span class="attr">password:</span> <span class="number">123456</span></span><br><span class="line">    <span class="attr">url:</span> <span class="string">jdbc:mysql://127.0.0.1:3306/database</span></span><br></pre></td></tr></table></figure>
+
+<p>另一种方法：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sed -i &#x27;0,/^\([[:space:]]*username: *\).*/s//\1xxx/;&#x27; file</span><br></pre></td></tr></table></figure>
+
+<p>1、<code>0</code>：匹配以下模式的第一次出现</p>
+<p>2、<code>/^\([[:space:]]username: \).*/</code>：搜索并捕获零个或多个空格或制表符，后跟username:</p>
+<p>3、<code>s//</code>：替换匹配字符串</p>
+<p>4、…使用捕获的 key 和新值</p>
+<p>5、<code>-i</code>：原地编辑文件</p>
+<p>测试</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">spring:</span></span><br><span class="line">  <span class="attr">datasource:</span></span><br><span class="line">    <span class="attr">username:</span> <span class="string">admin</span></span><br><span class="line">    <span class="attr">password:</span> <span class="string">xxxxx</span></span><br><span class="line">    <span class="attr">url:</span> <span class="string">jdbc:mysql://localhost:3306/database</span></span><br></pre></td></tr></table></figure>
+
+<p>使用命令</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sed -i &#x27;0,/^\([[:space:]]*username: *\).*/s//\1admin123/;&#x27; file</span><br><span class="line">sed -i &#x27;0,/^\([[:space:]]*password: *\).*/s//\1123456/;&#x27; file</span><br></pre></td></tr></table></figure>
+
+<p>结果</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">spring:</span></span><br><span class="line">  <span class="attr">datasource:</span></span><br><span class="line">    <span class="attr">username:</span> <span class="string">admin123</span></span><br><span class="line">    <span class="attr">password:</span> <span class="number">123456</span></span><br><span class="line">    <span class="attr">url:</span> <span class="string">jdbc:mysql://127.0.0.1:3306/database</span></span><br></pre></td></tr></table></figure>
+
 <h5 id="windows"><a href="#windows" class="headerlink" title="windows"></a>windows</h5><p>查找指定端口</p>
 <figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -aon|<span class="built_in">findstr</span> &quot;<span class="number">8080</span>&quot;</span><br></pre></td></tr></table></figure>
 
 <p>强制（&#x2F;F参数）杀死 pid 为 8080的所有进程包括子进程（&#x2F;T参数）</p>
 <figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">taskkill</span> /T /F /PID <span class="number">8080</span> </span><br></pre></td></tr></table></figure>
 
-<h5 id="ffmpeg"><a href="#ffmpeg" class="headerlink" title="ffmpeg"></a>ffmpeg</h5><ul>
+<p>打开cmd</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">win+R</span><br><span class="line"><span class="built_in">cmd</span></span><br></pre></td></tr></table></figure>
+
+<p>打开屏幕键盘</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">win+Ctrl+o</span><br></pre></td></tr></table></figure>
+
+<h5 id="ffmpeg剪切视频"><a href="#ffmpeg剪切视频" class="headerlink" title="ffmpeg剪切视频"></a>ffmpeg剪切视频</h5><ul>
 <li>剪辑参数讲解</li>
 </ul>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">-ss 0:00:43.73 #指定剪辑开始时间</span><br><span class="line">-to 0:00:53.73 #指定剪辑结束时间</span><br><span class="line">-t 10  #指定剪辑持续时间（单位：秒）</span><br><span class="line">-i input.mp4 #指定剪辑视频文件</span><br><span class="line">-c copy #采用原视频编码，直接复制，速度更快</span><br><span class="line">output.mp4 #输出视频文件</span><br><span class="line">-y  #直接覆盖输出视频文件不提示</span><br></pre></td></tr></table></figure>
@@ -346,6 +387,12 @@
 <td>8500Kbps</td>
 </tr>
 </tbody></table>
+<h5 id="ffmpeg图片处理"><a href="#ffmpeg图片处理" class="headerlink" title="ffmpeg图片处理"></a>ffmpeg图片处理</h5><p>1、图片压缩</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i image_source -q compress_level out_source</span><br><span class="line"><span class="comment">#compress_level：压缩等级为正整数，数值越大压缩等级越高</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="2-约束比例压缩"><a href="#2-约束比例压缩" class="headerlink" title="2.约束比例压缩"></a>2.约束比例压缩</h5><p>ffmpeg可以将图片压缩成指定的尺寸</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i image_source -vf scale=width:height out_source</span><br><span class="line"><span class="meta">#</span><span class="language-bash">width为压缩后的图片宽度</span></span><br><span class="line"><span class="meta">#</span><span class="language-bash">height为压缩后的图片高度</span></span><br><span class="line"><span class="meta">#</span><span class="language-bash">当width或height其中有一个数值为-1时将保持原来图片尺寸比例压缩</span></span><br></pre></td></tr></table></figure>
+
 <h4 id="记录一些接口"><a href="#记录一些接口" class="headerlink" title="记录一些接口"></a>记录一些接口</h4><h5 id="必应每日-API-接口"><a href="#必应每日-API-接口" class="headerlink" title="必应每日 API 接口"></a>必应每日 API 接口</h5><p><a target="_blank" rel="noopener" href="https://cn.bing.com/HPImageArchive.aspx?n=1&amp;format=js&amp;idx=0">https://cn.bing.com/HPImageArchive.aspx?n=1&amp;format=js&amp;idx=0</a></p>
 <p>壁纸 API 参数：</p>
 <table>
@@ -490,7 +537,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AE%B0%E5%BD%95%E4%B8%80%E4%BA%9B%E5%B8%B8%E7%94%A8%E5%B0%8F%E6%8A%80%E5%B7%A7"><span class="nav-number">1.</span> <span class="nav-text">记录一些常用小技巧</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#hexo"><span class="nav-number">1.1.</span> <span class="nav-text">hexo</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#markdown"><span class="nav-number">1.2.</span> <span class="nav-text">markdown</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#java"><span class="nav-number">1.3.</span> <span class="nav-text">java</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#linux"><span class="nav-number">1.4.</span> <span class="nav-text">linux</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#windows"><span class="nav-number">1.5.</span> <span class="nav-text">windows</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#ffmpeg"><span class="nav-number">1.6.</span> <span class="nav-text">ffmpeg</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AE%B0%E5%BD%95%E4%B8%80%E4%BA%9B%E6%8E%A5%E5%8F%A3"><span class="nav-number">2.</span> <span class="nav-text">记录一些接口</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%BF%85%E5%BA%94%E6%AF%8F%E6%97%A5-API-%E6%8E%A5%E5%8F%A3"><span class="nav-number">2.1.</span> <span class="nav-text">必应每日 API 接口</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%A4%B4%E5%83%8F%E6%8E%A5%E5%8F%A3"><span class="nav-number">2.2.</span> <span class="nav-text">头像接口</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AE%B0%E5%BD%95%E4%B8%80%E4%BA%9B%E5%B8%B8%E7%94%A8%E5%B0%8F%E6%8A%80%E5%B7%A7"><span class="nav-number">1.</span> <span class="nav-text">记录一些常用小技巧</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#hexo"><span class="nav-number">1.1.</span> <span class="nav-text">hexo</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#markdown"><span class="nav-number">1.2.</span> <span class="nav-text">markdown</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#java"><span class="nav-number">1.3.</span> <span class="nav-text">java</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#linux"><span class="nav-number">1.4.</span> <span class="nav-text">linux</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#sed%E6%B7%BB%E5%8A%A0%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9"><span class="nav-number">1.5.</span> <span class="nav-text">sed添加文件内容</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#sed%E4%BF%AE%E6%94%B9%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9"><span class="nav-number">1.6.</span> <span class="nav-text">sed修改文件内容</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#windows"><span class="nav-number">1.7.</span> <span class="nav-text">windows</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#ffmpeg%E5%89%AA%E5%88%87%E8%A7%86%E9%A2%91"><span class="nav-number">1.8.</span> <span class="nav-text">ffmpeg剪切视频</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#ffmpeg%E5%9B%BE%E7%89%87%E5%A4%84%E7%90%86"><span class="nav-number">1.9.</span> <span class="nav-text">ffmpeg图片处理</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-%E7%BA%A6%E6%9D%9F%E6%AF%94%E4%BE%8B%E5%8E%8B%E7%BC%A9"><span class="nav-number">1.10.</span> <span class="nav-text">2.约束比例压缩</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AE%B0%E5%BD%95%E4%B8%80%E4%BA%9B%E6%8E%A5%E5%8F%A3"><span class="nav-number">2.</span> <span class="nav-text">记录一些接口</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%BF%85%E5%BA%94%E6%AF%8F%E6%97%A5-API-%E6%8E%A5%E5%8F%A3"><span class="nav-number">2.1.</span> <span class="nav-text">必应每日 API 接口</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%A4%B4%E5%83%8F%E6%8E%A5%E5%8F%A3"><span class="nav-number">2.2.</span> <span class="nav-text">头像接口</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
